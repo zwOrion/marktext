@@ -8,6 +8,8 @@ import locale from 'element-ui/lib/locale'
 import axios from './axios'
 import store from './store'
 import './assets/symbolIcon'
+// import VueI18n from 'vue-i18n'
+import i18n from '../common/lang/index'
 import {
   Dialog,
   Form,
@@ -40,7 +42,7 @@ import { addElementStyle } from '@/util/theme'
 
 import './assets/styles/index.css'
 import './assets/styles/printService.css'
-
+// import './lang/index.js'
 // -----------------------------------------------
 
 // Decode source map in production - must be registered first
@@ -60,6 +62,26 @@ addElementStyle()
 
 // Configure Vue
 locale.use(lang)
+
+// 准备翻译的语言环境信息
+// const messages = {
+//   en: {
+//     message: {
+//       test: 'hello world'
+//     }
+//   },
+//   ja: {
+//     message: {
+//       test: 'こんにちは、世界'
+//     }
+//   }
+// }
+// Vue.use(VueI18n)
+// // 通过选项创建 VueI18n 实例
+// const i18n = new VueI18n({
+//   locale: 'ja', // 设置地区
+//   messages // 设置地区信息
+// })
 
 Vue.use(Dialog)
 Vue.use(Form)
@@ -99,9 +121,10 @@ services.forEach(s => {
 const router = new VueRouter({
   routes: routes(global.marktext.env.type)
 })
-
+Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
+  i18n,
   store,
   router,
   template: '<router-view class="view"></router-view>'

@@ -103,15 +103,15 @@
 
     <compound>
       <template #head>
-        <h6 class="title">Misc:</h6>
+        <h6 class="title">{{ $t('file.prferences.general.misc') + ':' }}</h6>
       </template>
       <template #children>
         <cur-select
-          description="User interface language"
+          :description="$t('file.prferences.general.languageInterface')"
           :value="language"
           :options="languageOptions"
           :onChange="value => onSelectChange('language', value)"
-          :disable="true"
+          :disable="false"
         ></cur-select>
       </template>
     </compound>
