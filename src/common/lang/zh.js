@@ -67,7 +67,58 @@ const zh = {
         }
       },
       editor: {
-        root: '编辑'
+        root: '编辑',
+        textEditorSettings: {
+          root: '文本编辑器设置:',
+          fontSize: '字号',
+          lineHeight: '行高',
+          fontfamily: '字体',
+          maxWidth: '文本编辑器最大宽度',
+          notes: "默认设置为空，可以使用带有单位后缀的数字，其中'ch'表示字符，'px'表示像素，或'%'表示百分比。"
+        },
+        codeBlokSetting: {
+          root: '代码块设置:',
+          fontSize: '字号',
+          fontfamily: '字体',
+          lineNum: '显示行号',
+          removeEmptyLines: '删除开头和结尾空行'
+        },
+        writingBehavior: {
+          root: '写作行为',
+          brackets: '自动补全关闭括号',
+          complterSyntax: '自动补全markdown语法',
+          quotationMarks: '自动关闭引号'
+        },
+        filerepresentation: {
+          root: '文件格式:',
+          tabWidth: 'tab宽度',
+          lineSeparator: '行分割符号类型',
+          encoding: '默认编码格式',
+          detectFileEncoding: '自动检测文件编码',
+          trailingNewLineChar: '对尾随换行符的处理'
+        },
+        misc: {
+          root: '杂项:',
+          textDirectioin: '文本方向',
+          hint4newParagraph: '隐藏新段落插入类型提升',
+          hidePopup: '隐藏鼠标在链接上时弹出框',
+          autoCheck: '是否自动检查相关任务'
+        },
+        endOfLineOptions: {
+          Default: '默认',
+          crlf: '回车和换行 (CRLF)',
+          lf: '换行 (LF)'
+        },
+        trimTrailingNewlineOptions: {
+          all: 'Trim all trailing',
+          one: 'Ensure exactly one trailing',
+          preserve: 'Preserve style of original document',
+          nothing: 'Do nothing'
+        },
+        textDirectionOptions: {
+          ltf: '从左向右',
+          rtl: '从右向左'
+        }
       },
       markdown: {
         root: 'Markdown'

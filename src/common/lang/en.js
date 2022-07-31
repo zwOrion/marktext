@@ -70,7 +70,58 @@ const en = {
         }
       },
       editor: {
-        root: 'Editor'
+        root: 'Editor',
+        textEditorSettings: {
+          root: 'Text editor settings:',
+          fontSize: 'Font size',
+          lineHeight: 'Line height',
+          fontfamily: 'Font family',
+          maxWidth: 'Maximum width of text editor',
+          notes: "Leave empty for theme default, otherwise use number with unit suffix, which is one of 'ch' for characters, 'px' for pixels, or '%' for percentage."
+        },
+        codeBlokSetting: {
+          root: 'Code block settings:',
+          fontSize: 'Font size',
+          fontfamily: 'Font family',
+          lineNum: 'Show line numbers',
+          removeEmptyLines: 'Remove leading and trailing empty lines'
+        },
+        writingBehavior: {
+          root: 'Writing behavior:',
+          brackets: 'Automatically close brackets when writing',
+          complterSyntax: 'Automatically complete markdown syntax',
+          quotationMarks: 'Automatically close quotation marks'
+        },
+        filerepresentation: {
+          root: 'File representation:',
+          tabWidth: 'Preferred tab width',
+          lineSeparator: 'Line separator type',
+          encoding: 'Default encoding',
+          detectFileEncoding: 'Automatically detect file encoding',
+          trailingNewLineChar: 'Handling of trailing newline characters'
+        },
+        misc: {
+          root: 'Misc:',
+          textDirectioin: 'Text direction',
+          hint4newParagraph: 'Hide hint for selecting type of new paragraph',
+          hidePopup: 'Hide popup when cursor is over link',
+          autoCheck: 'Whether to automatically check any related tasks'
+        },
+        endOfLineOptions: {
+          Default: 'Default',
+          crlf: 'Carriage return and line feed (CRLF)',
+          lf: 'Line feed (LF)'
+        },
+        trimTrailingNewlineOptions: {
+          all: 'Trim all trailing',
+          one: 'Ensure exactly one trailing',
+          preserve: 'Preserve style of original document',
+          nothing: 'Do nothing'
+        },
+        textDirectionOptions: {
+          ltf: 'Left to Right',
+          rtl: 'Right to Left'
+        }
       },
       markdown: {
         root: 'Markdown'
