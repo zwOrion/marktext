@@ -167,13 +167,75 @@ const zh = {
         }
       },
       spelling: {
-        root: '拼写'
+        root: '拼写',
+        spellChecking: {
+          root: '启用拼写检查',
+          hideMark4errors: '隐藏错误标记',
+          detectLanguage: '自动检查文档语言',
+          defaultLanguage: '默认检查拼写语言'
+        },
+        description: '使用的语言将在输入时自动检测。其他语言可以通过您的系统首选项窗格中的“语言和区域”添加。',
+        dictionary: {
+          root: '自定义字典:',
+          description: '在自定义字典中编辑单词.',
+          empty: '没有可用的单词',
+          labelWord: '单词',
+          laelOptions: '选项',
+          buttonTitle: '删除'
+        }
       },
       theme: {
-        root: '主题'
+        root: '主题',
+        description: '根据系统设置自动调整应用程序主题',
+        floder: '打开主题文件夹',
+        floderButton: '打开文件夹',
+        import: '导入自定义主题',
+        importButton: '导入主题',
+        autoSwitchThemeOptions: {
+          startup: '启动时调整主题',
+          never: '永不'
+        }
       },
       image: {
-        root: '图片'
+        root: '图片',
+        defaultAction: '从本地文件夹或剪贴板插入图像后的默认操作',
+        tooltip: '剪贴板处理仅在macOS和Windows上完全支持.',
+        upload: {
+          root: '上传程序',
+          uploader: '当前图片上传程序为',
+          nouploader: '目前没有选择上传程序。请选择一个上传程序并配置它。',
+          picgoWarning: ['你的系统没有', 'picgo', '被下载, 使用前请安装.'],
+          githubWarning: 'Github 将在未来的版本中被删除，请使用 picgo',
+          token: 'GitHub令牌:',
+          tokenTooltip: '令牌在 macOS 上通过 Keychain 保存，在 Linux 上通过 Secret Service API/libsecret 保存，在 Windows 上通过 Credential Vault 保存',
+          tokenPlaceholder: '输入令牌',
+          owner: '用户名称：:',
+          ownerPlaceholder: '用户名',
+          repo: '仓库名称:',
+          repoPlaceholder: '仓库',
+          branch: '分支名称 (可选):',
+          branchPlaceholder: '分支',
+          scriptDesc: '该脚本将以图像文件路径作为其唯一参数执行，它应该输出<em>HTML Image 元素</em>的<code>src</code>属性的任何有效值.',
+          scriptLocation: 'Shell脚本的位置:',
+          scriptPlaceholder: '脚本的绝对路径',
+          saveButton: '保存',
+          noticesCheck: ['通过使用 ', ', 你将同意 ', '的', '隐私', '和', '服务条款', '由于GDPR问题，该服务无法在欧洲使用.'],
+          path: {
+            root: '全局或相对图片文件夹',
+            globalDesc: '全局文件夹',
+            openButton: '打开...',
+            showButton: '在文件夹中展示',
+            relativeDesc: '优先相对文件夹',
+            relativePathDesc: '相对图片文件夹名称',
+            // 直接放${filename}提示Unexpected template string expression
+            relativeFootnote: '在上面的文本框中包含<code>{filename}</code>，可以自动插入文档文件名.'
+          }
+        },
+        imageActions: {
+          upload: '使用选定的上传器将图像上传到云(必须在下面配置)',
+          folder: '将图片复制到指定的相对路径或全局本地文件夹',
+          path: '保持原始位置'
+        }
       },
       keybindings: {
         root: '快捷键'

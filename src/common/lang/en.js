@@ -170,13 +170,74 @@ const en = {
         }
       },
       spelling: {
-        root: 'Spelling'
+        root: 'Spelling',
+        spellChecking: {
+          root: 'Enable spell checking',
+          hideMark4errors: 'Hide marks for spelling errors',
+          detectLanguage: 'Automatically detect document language',
+          defaultLanguage: 'Default language for spell checking'
+        },
+        description: 'The used language will be detected automatically while typing. Additional languages may be added through "Language & Region" in your system preferences pane.',
+        dictionary: {
+          root: 'Custom dictionary:',
+          description: 'Edit words in custom dictionary.',
+          empty: 'No words available',
+          labelWord: 'Word',
+          laelOptions: 'Options',
+          buttonTitle: 'Delete'
+        }
       },
       theme: {
-        root: 'Theme'
+        root: 'Theme',
+        description: 'Automatically adjust application theme according to system settings',
+        floder: 'Open the themes folder',
+        floderButton: 'Open Folder',
+        import: 'Import custom themes',
+        importButton: 'Import Theme',
+        autoSwitchThemeOptions: {
+          startup: 'Adjust theme at startup',
+          never: 'Never'
+        }
       },
       image: {
-        root: 'Image'
+        root: 'Image',
+        defaultAction: 'Default action after an image is inserted from local folder or clipboard',
+        tooltip: 'Clipboard handling is only fully supported on macOS and Windows.',
+        upload: {
+          root: 'Uploader',
+          uploader: 'The current image uploader is',
+          nouploader: 'Currently no uploader is selected. Please select an uploader and config it.',
+          picgoWarning: ['Your system does not have', 'picgo', 'installed, please install it before use.'],
+          githubWarning: 'Github will be removed in a future version, please use picgo',
+          token: 'GitHub token:',
+          tokenTooltip: 'The token is saved by Keychain on macOS, Secret Service API/libsecret on Linux and Credential Vault on Windows',
+          tokenPlaceholder: 'Input token',
+          owner: 'Owner name:',
+          ownerPlaceholder: 'owner',
+          repo: 'Repo name:',
+          repoPlaceholder: 'repo',
+          branch: 'Branch name (optional):',
+          branchPlaceholder: 'branch',
+          scriptDesc: 'The script will be executed with the image file path as its only argument and it should output any valid value for the <code>src</code> attribute of a <em>HTMLImageElement</em>.',
+          scriptLocation: 'Shell script location:',
+          scriptPlaceholder: 'Script absolute path',
+          saveButton: 'Save',
+          noticesCheck: ['By using ', ', you agree to ', 's', 'Privacy Statement', 'and', 'Terms of Service', 'This service cannot be used in Europe due to GDPR issues.'],
+          path: {
+            root: 'Global or relative image folder',
+            globalDesc: 'Global image folder',
+            openButton: 'Open...',
+            showButton: 'Show in Folder',
+            relativeDesc: 'Prefer relative assets folder',
+            relativePathDesc: 'Relative image folder name',
+            relativeFootnote: 'Include <code>{filename}</code> in the text-box above to automatically insert the document file name.'
+          }
+        },
+        imageActions: {
+          upload: 'Upload image to cloud using selected uploader (must be configured below)',
+          floder: 'Copy image to designated relative assets or global local folder',
+          path: 'Keep original location'
+        }
       },
       keybindings: {
         root: 'Key Bindings'

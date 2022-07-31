@@ -1,30 +1,30 @@
 <template>
   <div class="pref-spellchecker">
-    <h4>Spelling</h4>
+    <h4>{{ $t('file.preferences.spelling.root') }}</h4>
     <compound>
       <template #head>
         <bool
-          description="Enable spell checking"
+          :description="$t('file.preferences.spelling.spellChecking.root')"
           :bool="spellcheckerEnabled"
           :onChange="handleSpellcheckerEnabled"
         ></bool>
       </template>
       <template #children>
         <bool
-          description="Hide marks for spelling errors"
+          :description="$t('file.preferences.spelling.spellChecking.hideMark4errors')"
           :bool="spellcheckerNoUnderline"
           :disable="!spellcheckerEnabled"
           :onChange="value => onSelectChange('spellcheckerNoUnderline', value)"
         ></bool>
         <bool
           v-show="isOsx"
-          description="Automatically detect document language"
+          :description="$t('file.preferences.spelling.spellChecking.detectLanguage')"
           :bool="true"
           :disable="true"
         ></bool>
         <cur-select
           v-show="!isOsx"
-          description="Default language for spell checking"
+          :description="$t('file.preferences.spelling.spellChecking.defaultLanguage')"
           :value="spellcheckerLanguage"
           :options="availableDictionaries"
           :disable="!spellcheckerEnabled"
@@ -34,23 +34,23 @@
     </compound>
 
     <div v-if="isOsx && spellcheckerEnabled" class="description">
-      The used language will be detected automatically while typing. Additional languages may be added through "Language & Region" in your system preferences pane.
+      {{ $t('file.preferences.spelling.description') }}
     </div>
 
     <div v-if="!isOsx && spellcheckerEnabled">
-      <h6 class="title">Custom dictionary:</h6>
-      <div class="description">Edit words in custom dictionary.</div>
+      <h6 class="title">{{ $t('file.preferences.spelling.dictionary.root') }}</h6>
+      <div class="description">{{ $t('file.preferences.spelling.dictionary.description') }}</div>
       <el-table
         :data="wordsInCustomDictionary"
-        empty-text="No words available"
+        :empty-text="$t('file.preferences.spelling.dictionary.empty')"
         style="width: 100%"
       >
-        <el-table-column prop="word" label="Word">
+        <el-table-column prop="word" :label="$t('file.preferences.spelling.dictionary.labelWord')">
         </el-table-column>
 
-        <el-table-column fixed="right" label="Options" width="90">
+        <el-table-column fixed="right" :label="$t('file.preferences.spelling.dictionary.laelOptions')" width="90">
           <template slot-scope="scope">
-            <el-button @click="handleDeleteClick(scope.row)" type="text" size="small" title="Delete">
+            <el-button @click="handleDeleteClick(scope.row)" type="text" size="small" :title="$t('file.preferences.spelling.dictionary.buttonTitle')">
               <i class="el-icon-delete"></i>
             </el-button>
           </template>
