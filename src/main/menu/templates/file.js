@@ -141,7 +141,7 @@ export default function (keybindings, userPreference, recentlyUsedFiles) {
     type: 'separator',
     visible: !isOsx
   }, {
-    label: i18n.t('file.preferences.root'),
+    label: i18n.t('file.preferences.root') + '...',
     accelerator: keybindings.getAccelerator('file.preferences'),
     visible: !isOsx,
     click () {

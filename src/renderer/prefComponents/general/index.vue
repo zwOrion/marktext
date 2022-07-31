@@ -1,18 +1,18 @@
 <template>
   <div class="pref-general">
-    <h4>General</h4>
+    <h4>{{ $t('file.preferences.general.root') }}</h4>
     <compound>
       <template #head>
-        <h6 class="title">Auto Save:</h6>
+        <h6 class="title">{{ $t('file.preferences.general.autoSave.root') }}</h6>
       </template>
       <template #children>
         <bool
-          description="Automatically save document changes"
+          :description="$t('file.preferences.general.autoSave.bool')"
           :bool="autoSave"
           :onChange="value => onSelectChange('autoSave', value)"
         ></bool>
         <range
-          description="Delay following document edit before automatically saving"
+          :description="$t('file.preferences.general.autoSave.delay')"
           :value="autoSaveDelay"
           :min="1000"
           :max="10000"
@@ -25,34 +25,34 @@
 
     <compound>
       <template #head>
-        <h6 class="title">Window:</h6>
+        <h6 class="title">{{ $t('file.preferences.general.window.root') }}</h6>
       </template>
       <template #children>
         <cur-select
           v-if="!isOsx"
-          description="Title bar style"
-          notes="Requires restart."
+          :description="$t('file.preferences.general.window.titleBar')"
+          :notes="$t('file.preferences.general.window.notes')"
           :value="titleBarStyle"
           :options="titleBarStyleOptions"
           :onChange="value => onSelectChange('titleBarStyle', value)"
         ></cur-select>
         <bool
-          description="Hide scrollbars"
+          :description="$t('file.preferences.general.window.scrollbars')"
           :bool="hideScrollbar"
           :onChange="value => onSelectChange('hideScrollbar', value)"
         ></bool>
         <bool
-          description="Open files in new window"
+          :description="$t('file.preferences.general.window.openFiles')"
           :bool="openFilesInNewWindow"
           :onChange="value => onSelectChange('openFilesInNewWindow', value)"
         ></bool>
         <bool
-          description="Open folders in new window"
+          :description="$t('file.preferences.general.window.openFolder')"
           :bool="openFolderInNewWindow"
           :onChange="value => onSelectChange('openFolderInNewWindow', value)"
         ></bool>
         <cur-select
-          description="Zoom"
+          :description="$t('file.preferences.general.window.zoom')"
           :value="zoom"
           :options="zoomOptions"
           :onChange="value => onSelectChange('zoom', value)"
@@ -62,18 +62,18 @@
 
     <compound>
       <template #head>
-        <h6 class="title">Sidebar:</h6>
+        <h6 class="title">{{ $t('file.preferences.general.sidebar.root') }}</h6>
       </template>
       <template #children>
         <bool
-          description="Wrap text in table of contents"
+          :description="$t('file.preferences.general.sidebar.wrapText')"
           :bool="wordWrapInToc"
           :onChange="value => onSelectChange('wordWrapInToc', value)"
         ></bool>
 
         <!-- TODO: The description is very bad and the entry isn't used by the editor. -->
         <cur-select
-          description="Sort field for files in open folders"
+          :description="$t('file.preferences.general.sidebar.sort')"
           :value="fileSortBy"
           :options="fileSortByOptions"
           :onChange="value => onSelectChange('fileSortBy', value)"
@@ -84,7 +84,7 @@
 
     <compound>
       <template #head>
-        <h6 class="title">Action on startup:</h6>
+        <h6 class="title">{{ $t('file.preferences.general.startup.root') }}</h6>
       </template>
       <template #children>
         <section class="startup-action-ctrl">
@@ -93,9 +93,9 @@
               Hide "lastState" for now (#2064).
             <el-radio class="ag-underdevelop" label="lastState">Restore last editor session</el-radio>
             -->
-            <el-radio label="folder" style="margin-bottom: 10px;">Open the default directory<span>: {{defaultDirectoryToOpen}}</span></el-radio>
-            <el-button size="small" @click="selectDefaultDirectoryToOpen">Select Folder</el-button>
-            <el-radio label="blank">Open a blank page</el-radio>
+            <el-radio label="folder" style="margin-bottom: 10px;">{{ $t('file.preferences.general.startup.defaultDirectory') }}<span>: {{defaultDirectoryToOpen}}</span></el-radio>
+            <el-button size="small" @click="selectDefaultDirectoryToOpen">{{ $t('file.preferences.general.startup.selectFolder') }}</el-button>
+            <el-radio label="blank">{{ $t('file.preferences.general.startup.blankPage') }}</el-radio>
           </el-radio-group>
         </section>
       </template>
@@ -103,11 +103,11 @@
 
     <compound>
       <template #head>
-        <h6 class="title">{{ $t('file.prferences.general.misc') + ':' }}</h6>
+        <h6 class="title">{{ $t('file.preferences.general.misc.root') + ':' }}</h6>
       </template>
       <template #children>
         <cur-select
-          :description="$t('file.prferences.general.languageInterface')"
+          :description="$t('file.preferences.general.misc.languageInterface')"
           :value="language"
           :options="languageOptions"
           :onChange="value => onSelectChange('language', value)"

@@ -22,14 +22,70 @@ const en = {
     import: 'Import...',
     export: 'Export',
     print: 'Print',
-    preferences: 'Preferences...',
     closeTab: 'Close Tab',
     closeWindow: 'Close Window',
     quit: 'Quit',
-    prferences: {
+    preferences: {
+      root: 'Preferences',
+      autocomplete: 'Search preferences',
       general: {
-        misc: 'Misc',
-        languageInterface: 'User interface language'
+        root: 'General',
+        autoSave: {
+          root: 'Auto Save:',
+          bool: 'Automatically save document changes',
+          delay: 'Delay following document edit before automatically saving'
+        },
+        window: {
+          root: 'Window:',
+          titleBar: 'Title bar style',
+          notes: 'Requires restart.',
+          scrollbars: 'Hide scrollbars',
+          openFiles: 'Open files in new window',
+          openFolder: 'Open folders in new window',
+          zoom: 'Zoom',
+          titleBarStyleOptions: {
+            custom: 'Custom',
+            native: 'Custom'
+          },
+          fileSortByOptions: {
+            created: 'Creation time',
+            modified: 'Modification time',
+            title: 'Title'
+          }
+        },
+        sidebar: {
+          root: 'Sidebar:',
+          wrapText: 'Wrap text in table of contents',
+          sort: 'Sort field for files in open folders'
+        },
+        startup: {
+          root: 'Action on startup',
+          defaultDirectory: 'Open the default directory',
+          selectFolder: 'Select Folder',
+          blankPage: 'Open a blank page'
+        },
+        misc: {
+          root: 'Misc',
+          languageInterface: 'User interface language'
+        }
+      },
+      editor: {
+        root: 'Editor'
+      },
+      markdown: {
+        root: 'Markdown'
+      },
+      spelling: {
+        root: 'Spelling'
+      },
+      theme: {
+        root: 'Theme'
+      },
+      image: {
+        root: 'Image'
+      },
+      keybindings: {
+        root: 'Key Bindings'
       }
     }
   },

@@ -23,11 +23,68 @@ const zh = {
     export: '导出',
     print: '打印',
     preferences: {
-      root: '偏好...',
+      root: '偏好',
+      autocomplete: '查找偏好',
       general: {
-        misc: '杂项',
-        languageInterface: '用户界面语言'
+        root: '通用',
+        autoSave: {
+          root: '自动保存:',
+          bool: '自动保存文档变化',
+          delay: '自动保存延迟'
+        },
+        window: {
+          root: '窗口:',
+          titleBar: '标题栏样式',
+          notes: '需要重启.',
+          scrollbars: '隐藏滚动条',
+          openFiles: '在新窗口打开文件',
+          openFolder: '在新窗口打开文件夹',
+          zoom: '缩放',
+          titleBarStyleOptions: {
+            custom: 'Custom',
+            native: 'Custom'
+          },
+          fileSortByOptions: {
+            created: '创建时间',
+            modified: '修改时间',
+            title: '标题'
+          }
+        },
+        sidebar: {
+          root: '侧边栏:',
+          wrapText: '目录文本换行',
+          sort: '对文件目录进行排序'
+        },
+        startup: {
+          root: '启动',
+          defaultDirectory: '打开默认工作区',
+          selectFolder: '选择文件夹',
+          blankPage: '打开空白页'
+        },
+        misc: {
+          root: '杂项',
+          languageInterface: '用户界面语言'
+        }
+      },
+      editor: {
+        root: '编辑'
+      },
+      markdown: {
+        root: 'Markdown'
+      },
+      spelling: {
+        root: '拼写'
+      },
+      theme: {
+        root: '主题'
+      },
+      image: {
+        root: '图片'
+      },
+      keybindings: {
+        root: '快捷键'
       }
+
     },
     closeTab: '关闭标签',
     closeWindow: '关闭窗口',
