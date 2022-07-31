@@ -124,7 +124,50 @@ const en = {
         }
       },
       markdown: {
-        root: 'Markdown'
+        root: 'Markdown',
+        lists: {
+          root: 'Lists',
+          looseList: 'Prefer loose list items',
+          marker4bullet: 'Preferred marker for bullet lists',
+          marker4order: 'Preferred marker for ordered lists',
+          listIndentation: 'Preferred list indentation'
+        },
+        extensions: {
+          root: 'Markdown extensions:',
+          front: 'Front matter format',
+          pandocScript: 'Enable Pandoc-style superscript and subscript',
+          pandocFootnotes: 'Enable Pandoc-style footnotes',
+          note: 'Requires restart.'
+        },
+        compatibility: {
+          root: 'Compatibility:',
+          html: 'Enable HTML rendering',
+          gitlab: 'Enable GitLab compatibility mode'
+        },
+        diagrams: {
+          root: 'Diagrams:',
+          sequence: 'Sequence diagram theme'
+        },
+        misc: {
+          root: 'Misc:',
+          heading: 'Preferred heading style'
+        },
+        preferHeadingStyleOptions: {
+          atx: 'ATX heading',
+          setext: 'Setext heading'
+        },
+        listIndentationOptions: {
+          dfm: 'DocFX style',
+          tab: 'True tab character',
+          space1: 'Single space character',
+          space2: 'Two space characters',
+          space3: 'Three space characters',
+          space4: 'Four space characters'
+        },
+        sequenceThemeOptions: {
+          hand: 'Hand drawn',
+          simple: 'Simple'
+        }
       },
       spelling: {
         root: 'Spelling'

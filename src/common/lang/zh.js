@@ -105,7 +105,7 @@ const zh = {
           autoCheck: '是否自动检查相关任务'
         },
         endOfLineOptions: {
-          Default: '默认',
+          default: '默认',
           crlf: '回车和换行 (CRLF)',
           lf: '换行 (LF)'
         },
@@ -121,7 +121,50 @@ const zh = {
         }
       },
       markdown: {
-        root: 'Markdown'
+        root: 'Markdown',
+        lists: {
+          root: '列表:',
+          looseList: '宽松列表',
+          marker4bullet: '无序列表符号偏好',
+          marker4order: '有序列表符号偏好',
+          listIndentation: '列表缩进符号'
+        },
+        extensions: {
+          root: 'Markdown扩展:',
+          front: '上一页格式',
+          pandocScript: '启用 pandoc 上下标',
+          pandocFootnotes: '启用 pandoc 脚注',
+          note: '需要重启.'
+        },
+        compatibility: {
+          root: '兼容:',
+          html: '启用 HTML 渲染',
+          gitlab: '开启 GitLab 兼容模式'
+        },
+        diagrams: {
+          root: '图:',
+          sequence: '时序图主题'
+        },
+        misc: {
+          root: '杂项:',
+          heading: '首选标题样式'
+        },
+        preferHeadingStyleOptions: {
+          atx: 'ATX 风格',
+          setext: 'Setext 风格'
+        },
+        listIndentationOptions: {
+          dfm: 'DocFX 风格',
+          tab: '制表符缩进',
+          space1: '一个空格',
+          space2: '两个空格',
+          space3: '三个空格',
+          space4: '四个空格'
+        },
+        sequenceThemeOptions: {
+          hand: '手绘风',
+          simple: '简约'
+        }
       },
       spelling: {
         root: '拼写'
