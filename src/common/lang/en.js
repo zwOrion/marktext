@@ -240,7 +240,167 @@ const en = {
         }
       },
       keybindings: {
-        root: 'Key Bindings'
+        root: 'Key Bindings',
+        bindingDesc: [
+          'Customize MarkText shortcuts and click on the save button below to apply all changes (requires a restart).',
+          'All available and default key binding can be found ',
+          'online'
+        ],
+        labelDesc: 'Description',
+        labelKey: 'Key Combination',
+        labelOptions: 'Options',
+        editButton: 'Edit',
+        resetButton: 'Reset',
+        unbindButton: 'Unbind',
+        saveButton: 'Save',
+        restoreDefault: 'Restore default key bindings',
+        debugOptions: 'Debug options:',
+        dumpKeyboardInfo: 'Dump keyboard information',
+        keysDesc: {
+          mt: {
+            hide: 'MarkText: Hide MarkText',
+            hideOthers: 'MarkText: Hide Others'
+          },
+          file: {
+            newWindow: 'File: New Window',
+            newTab: 'File: New Tab',
+            openFile: 'File: Open file',
+            openFolder: 'File: Open Folder',
+            save: 'File: Save',
+            saveAs: 'File: Save As...',
+            moveFile: 'File: Move...',
+            renameFile: 'File: Rename...',
+            quickOpen: 'File: Show quick open dialog',
+            print: 'File: Print current Tab',
+            preferences: 'MarkText: Preferences',
+            closeTab: 'File: Close current Tab',
+            closeWindow: 'File: Close Window',
+            quit: 'MarkText: Quit',
+            // ============================================
+            // # Additional command descriptions
+            // #
+            toggleAutoSave: 'File: Toggle Auto Save',
+            importFile: 'File: Import...',
+            exportFile: 'File: Export...',
+            zoom: 'Window: Zoom...',
+            checkUpdate: 'MarkText: Check for Updates...'
+          },
+          edit: {
+            undo: 'Edit: Undo',
+            redo: 'Edit: Redo',
+            cut: 'Edit: Cut',
+            copy: 'Edit: Copy',
+            paste: 'Edit: Paste',
+            copyAsMarkdown: 'Edit: Copy as Markdown',
+            copyAsHtml: 'Edit: Copy as HTML',
+            pasteAsPlaintext: 'Edit: Paste as Plain Text',
+            selectAll: 'Edit: Select All',
+            duplicate: 'Edit: Duplicate',
+            createParagraph: 'Edit: Create Paragraph',
+            deleteParagraph: 'Edit: Delete Paragraph',
+            find: 'Edit: Find',
+            findNext: 'Edit: Find Next',
+            findPrevious: 'Edit: Find Previous',
+            replace: 'Edit: Replace',
+            findInFolder: 'Edit: Find in Folder',
+            screenshot: 'Edit: Make Screenshot'
+          },
+          paragraph: {
+            heading1: 'Paragraph: Transform into Heading 1',
+            heading2: 'Paragraph: Transform into Heading 2',
+            heading3: 'Paragraph: Transform into Heading 3',
+            heading4: 'Paragraph: Transform into Heading 4',
+            heading5: 'Paragraph: Transform into Heading 5',
+            heading6: 'Paragraph: Transform into Heading 6',
+            upgradeHeading: 'Paragraph: Upgrade Heading',
+            degradeHeading: 'Paragraph: Degrade Heading',
+            table: 'Paragraph: Create Table',
+            codeFence: 'Paragraph: Transform into Code Fence',
+            quoteBlock: 'Paragraph: Transform into Quote Block',
+            mathFormula: 'Paragraph: Transform into Math Formula',
+            htmlBlock: 'Paragraph: Transform into HTML Block',
+            orderList: 'Paragraph: Transform into Order List',
+            bulletList: 'Paragraph: Transform into Bullet List',
+            taskList: 'Paragraph: Transform into Task List',
+            looseListItem: 'Paragraph: Convert to Loose List Item',
+            paragraph: 'Paragraph: Create new Paragraph',
+            horizontalLine: 'Paragraph: Insert Horizontal Line',
+            frontMatter: 'Paragraph: Insert Front Matter',
+            // ============================================
+            // # Additional command descriptions
+            // #
+            resetParagraph: 'Paragraph: Transform into Paragraph'
+          },
+          format: {
+            strong: 'Format: Strong',
+            emphasis: 'Format: Emphasis',
+            underline: 'Format: Underline',
+            superscript: 'Format: Superscript',
+            subscript: 'Format: Subscript',
+            highlight: 'Format: Highlight',
+            inlineCode: 'Format: Inline Code',
+            inlineMath: 'Format: Inline Math',
+            strike: 'Format: Strike',
+            hyperlink: 'Format: Hyperlink',
+            image: 'Format: Insert Image',
+            clearFormat: 'Format: Clear Format'
+          },
+          window: {
+            minimize: 'Window: Minimize',
+            toggleAlwaysOnTop: 'Window: Always on Top',
+            zoomIn: 'Window: Zoom In',
+            zoomOut: 'Window: Zoom Out',
+            toggleFullScreen: 'Window: Toggle Full Screen',
+            // ============================================
+            // # Additional command descriptions
+            // #
+            changeTheme: 'Theme: Change Theme...'
+          },
+          view: {
+            commandPalette: 'View: Show Command Palette',
+            sourceCodeMode: 'View: Toggle Source Code Mode',
+            typewriterCode: 'View: Toggle Typewriter Mode',
+            focusMode: 'View: Focus Mode',
+            toggleSidebar: 'View: Toggle Sidebar',
+            toggleToc: 'View: Toggle Table of Content',
+            toggleTabbar: 'View: Toggle Tabs',
+            toggleDevTools: 'View: Show Developer Tools (Debug)',
+            devReload: 'View: Reload Window (Debug)',
+            // ============================================
+            // # Menu descriptions but not available as command
+            // #
+
+            reloadImages: 'View: Force reload images',
+            // ============================================
+            // # Additional command descriptions
+            // #
+            textDirection: 'View: Set Text Direction'
+          },
+          tabs: {
+            cycleForward: 'Misc: Cycle Tabs Forward',
+            cycleBackward: 'Misc: Cycle Tabs Backward',
+            switch2left: 'Misc: Switch tab to the left',
+            switch2right: 'Misc: Switch tab to the right',
+            switch2first: 'Misc: Switch tab to the 1st',
+            switch2second: 'Misc: Switch tab to the 2st',
+            switch2third: 'Misc: Switch tab to the 3st',
+            switch2fourth: 'Misc: Switch tab to the 4st',
+            switch2fifth: 'Misc: Switch tab to the 5st',
+            switch2sixth: 'Misc: Switch tab to the 6st',
+            switch2seventh: 'Misc: Switch tab to the 7st',
+            switch2eighth: 'Misc: Switch tab to the 8st',
+            switch2ninth: 'Misc: Switch tab to the 9st',
+            switch2tenth: 'Misc: Switch tab to the 10st'
+          },
+          docs: {
+            // ============================================
+            // # Additional command descriptions
+            // #
+            userGuide: 'MarkText: End User Guide',
+            markdownSyntax: 'MarkText: Markdown Syntax Guide'
+          }
+
+        }
       }
     }
   },
@@ -333,7 +493,6 @@ const en = {
     developerTools: 'Show Developer Tools',
     reloadWindow: 'Reload window'
   },
-
   help: {
     root: '&Help',
     quickStart: 'Quick Start...',
@@ -349,5 +508,6 @@ const en = {
     update: 'Check for updates...',
     about: 'About MarkText...'
   }
+
 }
 export default en

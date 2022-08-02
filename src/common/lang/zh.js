@@ -238,7 +238,167 @@ const zh = {
         }
       },
       keybindings: {
-        root: '快捷键'
+        root: '快捷键',
+        bindingDesc: [
+          '自定义MarkText快捷方式并单击下面的保存按钮以应用所有更改(需要重新启动).',
+          '可以从在线地址找到所有可用的和默认的键绑定',
+          '【Github地址】'
+        ],
+        labelDesc: '描述',
+        labelKey: '组合键',
+        labelOptions: '选项',
+        editButton: '编辑',
+        resetButton: '重置',
+        unbindButton: '解除绑定',
+        saveButton: '保存',
+        restoreDefault: '恢复默认键绑定',
+        debugOptions: '调试选项:',
+        dumpKeyboardInfo: '跳转键盘信息文件',
+        keysDesc: {
+          mt: {
+            hide: 'MarkText: 隐藏MarkText',
+            hideOthers: 'MarkText: 隐藏其他'
+          },
+          file: {
+            newWindow: '文件: 新建窗口',
+            newTab: '文件: 新建标签',
+            openFile: '文件: 新建文件',
+            openFolder: '文件: 打开文件夹',
+            save: '文件: 保存',
+            saveAs: '文件: 保存为...',
+            moveFile: '文件: 移动...',
+            renameFile: '文件: 重命名...',
+            quickOpen: '文件: 展示快捷打开文件弹框',
+            print: '文件: 打印当前标签',
+            preferences: 'MarkText: 偏好',
+            closeTab: '文件: 关闭当前标签页',
+            closeWindow: '文件: 关闭窗口',
+            quit: 'MarkText: 退出',
+            // ============================================
+            // # Additional command descriptions
+            // #
+            toggleAutoSave: '文件: 切换自动保存',
+            importFile: '文件: 导入...',
+            exportFile: '文件: 导出...',
+            zoom: '窗口: 缩放...',
+            checkUpdate: 'MarkText: 检查更新...'
+          },
+          edit: {
+            undo: '编辑: 撤销',
+            redo: '编辑: 恢复',
+            cut: '编辑: 剪切',
+            copy: '编辑: 复制',
+            paste: '编辑: 粘贴',
+            copyAsMarkdown: '编辑: 复制为Markdown',
+            copyAsHtml: '编辑: 复制为HTML',
+            pasteAsPlaintext: '编辑: 粘贴为纯文本',
+            selectAll: '编辑: 全选',
+            duplicate: '编辑: 向下复制一行',
+            createParagraph: '编辑: 创建段落',
+            deleteParagraph: '编辑: 删除段落',
+            find: '编辑: 查找',
+            findNext: '编辑: 查找下一个',
+            findPrevious: '编辑: 查找前一个',
+            replace: '编辑: 替换',
+            findInFolder: '编辑: 在文件夹中查找',
+            screenshot: '编辑: 截图'
+          },
+          paragraph: {
+            heading1: '段落: 转为标题1',
+            heading2: '段落: 转为标题2',
+            heading3: '段落: 转为标题3',
+            heading4: '段落: 转为标题4',
+            heading5: '段落: 转为标题5',
+            heading6: '段落: 转为标题6',
+            upgradeHeading: '段落: 升级标题',
+            degradeHeading: '段落: 降级标题',
+            table: '段落: 创建表格',
+            codeFence: '段落: 转为代码块',
+            quoteBlock: '段落: 转为引用块',
+            mathFormula: '段落: 转为数学块',
+            htmlBlock: '段落: 转为Html块',
+            orderList: '段落: 转为有序列表',
+            bulletList: '段落: 转为无序列表',
+            taskList: '段落: 转为任务列表',
+            looseListItem: '段落: 转为松散列表',
+            paragraph: '段落: 创建新段落',
+            horizontalLine: '段落: 插入水平分割线',
+            frontMatter: '段落: 插入前一页',
+            // ============================================
+            // # Additional command descriptions
+            // #
+            resetParagraph: '段落: 转变成段落'
+          },
+          format: {
+            strong: '格式: 加粗',
+            emphasis: '格式: 斜体',
+            underline: '格式: 下划线',
+            superscript: '格式: 上标',
+            subscript: '格式: 下标',
+            highlight: '格式: 高亮',
+            inlineCode: '格式: 行内代码',
+            inlineMath: '格式: 行内数学',
+            strike: '格式: 中划线',
+            hyperlink: '格式: 超链接',
+            image: '格式: 插入图片',
+            clearFormat: '格式: 清除格式'
+          },
+          window: {
+            minimize: '窗口: 最小化',
+            toggleAlwaysOnTop: '窗口: 总是置顶',
+            zoomIn: '窗口: 放大',
+            zoomOut: '窗口: 缩小',
+            toggleFullScreen: '窗口: 全屏显示',
+            // ============================================
+            // # Additional command descriptions
+            // #
+            changeTheme: '主题: 修改主题...'
+          },
+          view: {
+            commandPalette: '视图: 命令面板',
+            sourceCodeMode: '视图: 源码模式',
+            typewriterCode: '视图: 实时预览',
+            focusMode: '视图: 聚焦模式',
+            toggleSidebar: '视图: 切换侧边栏',
+            toggleToc: '视图: 切换目录',
+            toggleTabbar: '视图: 切换标签',
+            toggleDevTools: '视图: 显示开发者工具(Debug)',
+            devReload: '视图: 刷新窗口 (Debug)',
+            // ============================================
+            // # Menu descriptions but not available as command
+            // #
+
+            reloadImages: '视图: 强制刷新图片',
+            // ============================================
+            // # Additional command descriptions
+            // #
+            textDirection: '视图: 设置文本方向'
+          },
+          tabs: {
+            cycleForward: '杂项: 顺序切换标签',
+            cycleBackward: '杂项: 逆序切换标签',
+            switch2left: '杂项: 切换到左边的标签',
+            switch2right: '杂项: 切换到右边的标签',
+            switch2first: '杂项: 切换到第一个标签',
+            switch2second: '杂项: 切换到第二个标签',
+            switch2third: '杂项: 切换到第三个标签',
+            switch2fourth: '杂项: 切换到第四个标签',
+            switch2fifth: '杂项: 切换到第五个标签',
+            switch2sixth: '杂项: 切换到第六个标签',
+            switch2seventh: '杂项: 切换到第七个标签',
+            switch2eighth: '杂项: 切换到第八个标签',
+            switch2ninth: '杂项: 切换到第九个标签',
+            switch2tenth: '杂项: 切换到第十个标签'
+          },
+          docs: {
+            // ============================================
+            // # Additional command descriptions
+            // #
+            userGuide: 'MarkText: 用户指南',
+            markdownSyntax: 'MarkText: Markdown语法指导'
+          }
+
+        }
       }
 
     },
