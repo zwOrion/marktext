@@ -11,7 +11,7 @@
         :onChange="value => setCurrentUploader(value)"></cur-select>
       <div class="picgo" v-if="currentUploader === 'picgo'">
         <div v-if="!picgoExists" class="warning">
-          {{ $t('file.preferences.image.upload.picgoWarning[0]') }} 
+          {{ $t('file.preferences.image.upload.picgoWarning[0]') }}
           <span class="link" @click="open('https://github.com/PicGo/PicGo-Core')">
            {{ $t('file.preferences.image.upload.picgoWarning[1]') }}
           </span> {{ $t('file.preferences.image.upload.picgoWarning[2]') }}
