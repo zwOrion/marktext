@@ -21,7 +21,7 @@ import plantumlIcon from '../../assets/pngicon/plantuml/2.png'
 import mermaidIcon from '../../assets/pngicon/mermaid/2.png'
 import vegaIcon from '../../assets/pngicon/chart/2.png'
 import { isOsx } from '../../config'
-
+import i18n from '../../../../common/lang/index'
 const COMMAND_KEY = isOsx ? '⌘' : 'Ctrl'
 const OPTION_KEY = isOsx ? '⌥' : 'Alt'
 const SHIFT_KEY = isOsx ? '⇧' : 'Shift'
@@ -35,134 +35,134 @@ const SHIFT_KEY = isOsx ? '⇧' : 'Shift'
 
 export const quickInsertObj = {
   'basic block': [{
-    title: 'Paragraph',
-    subTitle: 'Lorem Ipsum is simply dummy text',
+    title: i18n.t('quickInsert.basicBlock.paragraph.root'),
+    subTitle: i18n.t('quickInsert.basicBlock.paragraph.subTitle'),
     label: 'paragraph',
     shortCut: `${COMMAND_KEY}+0`,
     icon: paragraphIcon
   }, {
-    title: 'Horizontal Line',
-    subTitle: '---',
+    title: i18n.t('quickInsert.basicBlock.horizontalLine.root'),
+    subTitle: i18n.t('quickInsert.basicBlock.horizontalLine.subTitle'),
     label: 'hr',
     shortCut: `${OPTION_KEY}+${COMMAND_KEY}+-`,
     icon: hrIcon
   }, {
-    title: 'Front Matter',
-    subTitle: '--- Lorem Ipsum ---',
+    title: i18n.t('quickInsert.basicBlock.frontMatter.root'),
+    subTitle: i18n.t('quickInsert.basicBlock.frontMatter.subTitle'),
     label: 'front-matter',
     shortCut: `${OPTION_KEY}+${COMMAND_KEY}+Y`,
     icon: frontMatterIcon
   }],
   header: [{
-    title: 'Header 1',
-    subTitle: '# Lorem Ipsum is simply ...',
+    title: i18n.t('quickInsert.header.header1.root'),
+    subTitle: i18n.t('quickInsert.header.header1.subTitle'),
     label: 'heading 1',
     shortCut: `${COMMAND_KEY}+1`,
     icon: header1Icon
   }, {
-    title: 'Header 2',
-    subTitle: '## Lorem Ipsum is simply ...',
+    title: i18n.t('quickInsert.header.header2.root'),
+    subTitle: i18n.t('quickInsert.header.header2.subTitle'),
     label: 'heading 2',
     shortCut: `${COMMAND_KEY}+2`,
     icon: header2Icon
   }, {
-    title: 'Header 3',
-    subTitle: '### Lorem Ipsum is simply ...',
+    title: i18n.t('quickInsert.header.header3.root'),
+    subTitle: i18n.t('quickInsert.header.header3.subTitle'),
     label: 'heading 3',
     shortCut: `${COMMAND_KEY}+3`,
     icon: header3Icon
   }, {
-    title: 'Header 4',
-    subTitle: '#### Lorem Ipsum is simply ...',
+    title: i18n.t('quickInsert.header.header4.root'),
+    subTitle: i18n.t('quickInsert.header.header4.subTitle'),
     label: 'heading 4',
     shortCut: `${COMMAND_KEY}+4`,
     icon: header4Icon
   }, {
-    title: 'Header 5',
-    subTitle: '##### Lorem Ipsum is simply ...',
+    title: i18n.t('quickInsert.header.header5.root'),
+    subTitle: i18n.t('quickInsert.header.header5.subTitle'),
     label: 'heading 5',
     shortCut: `${COMMAND_KEY}+5`,
     icon: header5Icon
   }, {
-    title: 'Header 6',
-    subTitle: '###### Lorem Ipsum is simply ...',
+    title: i18n.t('quickInsert.header.header6.root'),
+    subTitle: i18n.t('quickInsert.header.header6.subTitle'),
     label: 'heading 6',
     shortCut: `${COMMAND_KEY}+6`,
     icon: header6Icon
   }],
   'advanced block': [{
-    title: 'Table Block',
-    subTitle: '|Lorem | Ipsum is simply |',
+    title: i18n.t('quickInsert.advancedBlock.tableBlock.root'),
+    subTitle: i18n.t('quickInsert.advancedBlock.tableBlock.subTitle'),
     label: 'table',
     shortCut: `${SHIFT_KEY}+${COMMAND_KEY}+T`,
     icon: newTableIcon
   }, {
-    title: 'Display Math',
-    subTitle: '$$ Lorem Ipsum is simply $$',
+    title: i18n.t('quickInsert.advancedBlock.displayMath.root'),
+    subTitle: i18n.t('quickInsert.advancedBlock.displayMath.subTitle'),
     label: 'mathblock',
     shortCut: `${OPTION_KEY}+${COMMAND_KEY}+M`,
     icon: mathblockIcon
   }, {
-    title: 'HTML Block',
-    subTitle: '<div> Lorem Ipsum is simply </div>',
+    title: i18n.t('quickInsert.advancedBlock.hTMLBlock.root'),
+    subTitle: i18n.t('quickInsert.advancedBlock.hTMLBlock.subTitle'),
     label: 'html',
     shortCut: `${OPTION_KEY}+${COMMAND_KEY}+J`,
     icon: htmlIcon
   }, {
-    title: 'Code Block',
-    subTitle: '```java Lorem Ipsum is simply ```',
+    title: i18n.t('quickInsert.advancedBlock.codeBlock.root'),
+    subTitle: i18n.t('quickInsert.advancedBlock.codeBlock.subTitle'),
     label: 'pre',
     shortCut: `${OPTION_KEY}+${COMMAND_KEY}+C`,
     icon: codeIcon
   }, {
-    title: 'Quote Block',
-    subTitle: '>Lorem Ipsum is simply ...',
+    title: i18n.t('quickInsert.advancedBlock.quoteBlock.root'),
+    subTitle: i18n.t('quickInsert.advancedBlock.quoteBlock.subTitle'),
     label: 'blockquote',
     shortCut: `${OPTION_KEY}+${COMMAND_KEY}+Q`,
     icon: quoteIcon
   }],
   'list block': [{
-    title: 'Order List',
-    subTitle: '1. Lorem Ipsum is simply ...',
+    title: i18n.t('quickInsert.listBlock.orderList.root'),
+    subTitle: i18n.t('quickInsert.listBlock.orderList.subTitle'),
     label: 'ol-order',
     shortCut: `${OPTION_KEY}+${COMMAND_KEY}+O`,
     icon: orderListIcon
   }, {
-    title: 'Bullet List',
-    subTitle: '- Lorem Ipsum is simply ...',
+    title: i18n.t('quickInsert.listBlock.bulletList.root'),
+    subTitle: i18n.t('quickInsert.listBlock.bulletList.subTitle'),
     label: 'ul-bullet',
     shortCut: `${OPTION_KEY}+${COMMAND_KEY}+U`,
     icon: bulletListIcon
   }, {
-    title: 'To-do List',
-    subTitle: '- [x] Lorem Ipsum is simply ...',
+    title: i18n.t('quickInsert.listBlock.todoList.root'),
+    subTitle: i18n.t('quickInsert.listBlock.todoList.subTitle'),
     label: 'ul-task',
     shortCut: `${OPTION_KEY}+${COMMAND_KEY}+X`,
     icon: todoListIcon
   }],
   diagram: [{
-    title: 'Vega Chart',
-    subTitle: 'Render flow chart by vega-lite.js.',
+    title: i18n.t('quickInsert.diagram.vegaChart.root'),
+    subTitle: i18n.t('quickInsert.diagram.vegaChart.subTitle'),
     label: 'vega-lite',
     icon: vegaIcon
   }, {
-    title: 'Flow Chart',
-    subTitle: 'Render flow chart by flowchart.js.',
+    title: i18n.t('quickInsert.diagram.flowChart.root'),
+    subTitle: i18n.t('quickInsert.diagram.flowChart.subTitle'),
     label: 'flowchart',
     icon: flowchartIcon
   }, {
-    title: 'Sequence Diagram',
-    subTitle: 'Render sequence diagram by js-sequence.',
+    title: i18n.t('quickInsert.diagram.sequenceDiagram.root'),
+    subTitle: i18n.t('quickInsert.diagram.sequenceDiagram.subTitle'),
     label: 'sequence',
     icon: sequenceIcon
   }, {
-    title: 'PlantUML Diagram',
-    subTitle: 'Render PlantUML diagrams',
+    title: i18n.t('quickInsert.diagram.plantUMLDiagram.root'),
+    subTitle: i18n.t('quickInsert.diagram.plantUMLDiagram.subTitle'),
     label: 'plantuml',
     icon: plantumlIcon
   }, {
-    title: 'Mermaid',
-    subTitle: 'Render Diagram by mermaid.',
+    title: i18n.t('quickInsert.diagram.mermaid.root'),
+    subTitle: i18n.t('quickInsert.diagram.mermaid.subTitle'),
     label: 'mermaid',
     icon: mermaidIcon
   }]

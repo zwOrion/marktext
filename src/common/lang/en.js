@@ -507,6 +507,107 @@ const en = {
     license: 'License...',
     update: 'Check for updates...',
     about: 'About MarkText...'
+  },
+  quickInsert: {
+    basicBlock: {
+      root: 'basic block',
+      paragraph: {
+        root: 'Paragraph',
+        subTitle: 'Lorem Ipsum is simply dummy text'
+      },
+      horizontalLine: {
+        root: 'Horizontal Line',
+        subTitle: '---'
+      },
+      frontMatter: {
+        root: 'Front Matter',
+        subTitle: '--- Lorem Ipsum ---'
+      }
+    },
+    header: {
+      header1: {
+        root: 'Header 1',
+        subTitle: '# Lorem Ipsum is simply ...'
+      },
+      header2: {
+        root: 'Header 2',
+        subTitle: '## Lorem Ipsum is simply ...'
+      },
+      header3: {
+        root: 'Header 3',
+        subTitle: '### Lorem Ipsum is simply ...'
+      },
+      header4: {
+        root: 'Header 4',
+        subTitle: '#### Lorem Ipsum is simply ...'
+      },
+      header5: {
+        root: 'Header 5',
+        subTitle: '##### Lorem Ipsum is simply ...'
+      },
+      header6: {
+        root: 'Header 6',
+        subTitle: '###### Lorem Ipsum is simply ...'
+      }
+    },
+    advancedBlock: {
+      tableBlock: {
+        root: 'Table Block',
+        subTitle: '|Lorem | Ipsum is simply |'
+      },
+      displayMath: {
+        root: 'Display Math',
+        subTitle: '$$ Lorem Ipsum is simply $$'
+      },
+      hTMLBlock: {
+        root: 'HTML Block',
+        subTitle: '<div> Lorem Ipsum is simply </div>'
+      },
+      codeBlock: {
+        root: 'Code Block',
+        subTitle: '```java Lorem Ipsum is simply ```'
+      },
+      quoteBlock: {
+        root: 'Quote Block',
+        subTitle: '>Lorem Ipsum is simply ...'
+      }
+    },
+    listBlock: {
+      orderList: {
+        root: 'Order List',
+        subTitle: '1. Lorem Ipsum is simply ...'
+      },
+      bulletList: {
+        root: 'Bullet List',
+        subTitle: '- Lorem Ipsum is simply ...'
+      },
+      todoList: {
+        root: 'To-do List',
+        subTitle: '- [x] Lorem Ipsum is simply ...'
+      }
+    },
+    diagram: {
+      vegaChart: {
+        root: 'Vega Chart',
+        subTitle: 'Render flow chart by vega-lite.js.'
+      },
+      flowChart: {
+        root: 'Flow Chart',
+        subTitle: 'Render flow chart by flowchart.js.'
+      },
+      sequenceDiagram: {
+        root: 'Sequence Diagram',
+        subTitle: 'Render sequence diagram by js-sequence.'
+      },
+      plantUMLDiagram: {
+        root: 'PlantUML Diagram',
+        subTitle: 'Render PlantUML diagrams'
+      },
+      mermaid: {
+        root: 'Mermaid',
+        subTitle: 'Render Diagram by mermaid.'
+      }
+    }
   }
 
 }

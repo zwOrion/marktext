@@ -510,6 +510,107 @@ const zh = {
     license: '许可证',
     update: '更新',
     about: '关于'
+  },
+  quickInsert: {
+    basicBlock: {
+      root: 'basic block',
+      paragraph: {
+        root: '段落/Paragraph',
+        subTitle: '文本段'
+      },
+      horizontalLine: {
+        root: '水平线/Horizontal Line',
+        subTitle: '---'
+      },
+      frontMatter: {
+        root: '上一页/Front Matter',
+        subTitle: '--- 内容 ---'
+      }
+    },
+    header: {
+      header1: {
+        root: '标题1/Header 1',
+        subTitle: '# 标题内容 ...'
+      },
+      header2: {
+        root: '标题2/Header 2',
+        subTitle: '## 标题内容 ...'
+      },
+      header3: {
+        root: '标题3/Header 3',
+        subTitle: '### 标题内容 ...'
+      },
+      header4: {
+        root: '标题4/Header 4',
+        subTitle: '#### 标题内容 ...'
+      },
+      header5: {
+        root: '标题5/Header 5',
+        subTitle: '##### 标题内容 ...'
+      },
+      header6: {
+        root: '标题6/Header 6',
+        subTitle: '###### 标题内容 ...'
+      }
+    },
+    advancedBlock: {
+      tableBlock: {
+        root: '表格/Table Block',
+        subTitle: '|单元格文本 | 单元格文本 |'
+      },
+      displayMath: {
+        root: '数学块/Display Math',
+        subTitle: '$$ s数学内容 $$'
+      },
+      hTMLBlock: {
+        root: 'HTML块/HTML Block',
+        subTitle: '<div> Html内容 </div>'
+      },
+      codeBlock: {
+        root: '代码块/Code Block',
+        subTitle: '```java 代码 ```'
+      },
+      quoteBlock: {
+        root: '引用/Quote Block',
+        subTitle: '>引用内容 ...'
+      }
+    },
+    listBlock: {
+      orderList: {
+        root: '有序列表/Order List',
+        subTitle: '1. 列表内容 ...'
+      },
+      bulletList: {
+        root: '无需列表/Bullet List',
+        subTitle: '- 列表内容 ...'
+      },
+      todoList: {
+        root: '待办列表/To-do List',
+        subTitle: '- [x] 列表内容 ...'
+      }
+    },
+    diagram: {
+      vegaChart: {
+        root: 'Vega Chart',
+        subTitle: 'Render flow chart by vega-lite.js.'
+      },
+      flowChart: {
+        root: 'Flow Chart',
+        subTitle: 'Render flow chart by flowchart.js.'
+      },
+      sequenceDiagram: {
+        root: 'Sequence Diagram',
+        subTitle: 'Render sequence diagram by js-sequence.'
+      },
+      plantUMLDiagram: {
+        root: 'PlantUML Diagram',
+        subTitle: 'Render PlantUML diagrams'
+      },
+      mermaid: {
+        root: 'Mermaid',
+        subTitle: 'Render Diagram by mermaid.'
+      }
+    }
   }
 
 }
