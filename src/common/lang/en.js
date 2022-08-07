@@ -45,7 +45,7 @@ const en = {
           zoom: 'Zoom',
           titleBarStyleOptions: {
             custom: 'Custom',
-            native: 'Custom'
+            native: 'Native'
           },
           fileSortByOptions: {
             created: 'Creation time',
@@ -66,7 +66,8 @@ const en = {
         },
         misc: {
           root: 'Misc',
-          languageInterface: 'User interface language'
+          languageInterface: 'User interface language',
+          notes: 'Requires restart.'
         }
       },
       editor: {
@@ -481,7 +482,7 @@ const en = {
     root: '&Theme'
   },
   view: {
-    root: '',
+    root: '&View',
     commandPalette: 'Command Palette...',
     sourceCodeMode: 'Source Code Mode',
     typewriterMode: 'Typewriter Mode',

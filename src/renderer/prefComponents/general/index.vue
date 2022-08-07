@@ -109,6 +109,7 @@
         <cur-select
           :description="$t('file.preferences.general.misc.languageInterface')"
           :value="language"
+          :notes="$t('file.preferences.general.misc.notes')"
           :options="languageOptions"
           :onChange="value => onSelectChange('language', value)"
           :disable="false"

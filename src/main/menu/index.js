@@ -369,6 +369,13 @@ class AppMenu {
     ipcMain.on('mt::add-recently-used-document', (e, pathname) => {
       this.addRecentlyUsedDocument(pathname)
     })
+    ipcMain.on('mt::set-user-preference-language', (e, pathname) => {
+      // log.info('修改语言')
+      // todo: 语言环境变化后刷新菜单栏
+      // const recentDocuments = this.getRecentlyUsedDocuments()
+      // this.updateAppMenu('')
+    })
+
     ipcMain.on('mt::update-line-ending-menu', (e, windowId, lineEnding) => {
       this.updateLineEndingMenu(windowId, lineEnding)
     })

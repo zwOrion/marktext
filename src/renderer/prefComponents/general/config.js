@@ -65,5 +65,5 @@ export const languageOptions = [{
   value: 'en'
 }, {
   label: '简体中文',
-  value: 'zh-CN'
+  value: 'zhCN'
 }]

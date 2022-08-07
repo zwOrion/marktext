@@ -1,5 +1,5 @@
 // 创建文件zh.js
-const zh = {
+const zhCN = {
   language: {
     zh: '中文',
     en: 'English'
@@ -42,7 +42,7 @@ const zh = {
           zoom: '缩放',
           titleBarStyleOptions: {
             custom: 'Custom',
-            native: 'Custom'
+            native: 'Native'
           },
           fileSortByOptions: {
             created: '创建时间',
@@ -63,7 +63,8 @@ const zh = {
         },
         misc: {
           root: '杂项',
-          languageInterface: '用户界面语言'
+          languageInterface: '用户界面语言',
+          notes: '需要重启.'
         }
       },
       editor: {
@@ -614,4 +615,4 @@ const zh = {
   }
 
 }
-export default zh
+export default zhCN

@@ -127,6 +127,9 @@ const actions = {
   SET_SINGLE_PREFERENCE ({ commit }, { type, value }) {
     // save to electron-store
     ipcRenderer.send('mt::set-user-preference', { [type]: value })
+    if (type === 'language') {
+      ipcRenderer.send('mt::set-user-preference-language', { [type]: value })
+    }
   },
 
   SET_USER_DATA ({ commit }, { type, value }) {
