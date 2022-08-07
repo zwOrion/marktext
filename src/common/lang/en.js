@@ -4,6 +4,27 @@ const en = {
     zh: '中文',
     en: 'English'
   },
+  misc: {
+    untitled: 'Untitled',
+    openedFiles: 'Opened files',
+    openFolder: 'Open Folder',
+    searchInFolder: 'Search in folder...',
+    noFolder: 'No folder open',
+    case: 'Case Sensitive',
+    wholeWord: 'Select whole word',
+    regEx: 'Use query as RegEx',
+    tabOfContent: 'Table Of Contents',
+    count: {
+      words: 'Words:',
+      shortWords: 'W',
+      characters: 'Characters:',
+      shortChar: 'C',
+      paragraphs: 'Paragraphs:',
+      shortParagraphs: 'P',
+      all: '(with space)character',
+      shortAll: 'A'
+    }
+  },
   file: {
     root: '&File',
     newTab: 'New Tab',

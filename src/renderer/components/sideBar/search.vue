@@ -5,12 +5,12 @@
       <div class="search-wrapper">
         <input
           type="text" v-model="keyword"
-          placeholder="Search in folder..."
+          :placeholder="$t('misc.searchInFolder')"
           @keyup="search"
         >
         <div class="controls">
           <span
-            title="Case Sensitive"
+            :title="$t('misc.case')"
             class="is-case-sensitive"
             :class="{'active': isCaseSensitive}"
             @click.stop="caseSensitiveClicked()"
@@ -20,7 +20,7 @@
             </svg>
           </span>
           <span
-            title="Select whole word"
+            :title="$t('misc.wholeWord')"
             class="is-whole-word"
             :class="{'active': isWholeWord}"
             @click.stop="wholeWordClicked()"
@@ -30,7 +30,7 @@
             </svg>
           </span>
           <span
-            title="Use query as RegEx"
+            :title="$t('misc.regEx')"
             class="is-regex"
             :class="{'active': isRegexp}"
             @click.stop="regexpClicked()"
@@ -43,7 +43,7 @@
       </div>
 
       <div class="search-message-section" v-if="showNoFolderOpenedMessage">
-        <span>No folder open</span>
+        <span>{{ $t('misc.noFolder') }}</span>
       </div>
       <div class="search-message-section" v-if="showNoResultFoundMessage">No results found.</div>
       <div class="search-message-section" v-if="searchErrorString">{{ searchErrorString }}</div>
@@ -78,7 +78,7 @@
             v-if="showNoFolderOpenedMessage"
             @click="openFolder"
           >
-            Open Folder
+            {{ $t('misc.openFolder') }}
           </button>
         </div>
       </div>

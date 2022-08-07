@@ -12,6 +12,7 @@ import { normalizeAndResolvePath, writeFile } from '../../filesystem'
 import { writeMarkdownFile } from '../../filesystem/markdown'
 import { getPath, getRecommendTitleFromMarkdownString } from '../../utils'
 import pandoc from '../../utils/pandoc'
+import i18n from '../../../common/lang/index'
 
 // TODO(refactor): "save" and "save as" should be moved to the editor window (editor.js) and
 // the renderer should communicate only with the editor window for file relevant stuff.
@@ -58,7 +59,7 @@ const handleResponseForExport = async (e, { type, content, pathname, title, page
   const dirname = pathname ? path.dirname(pathname) : getPath('documents')
   let nakedFilename = pathname ? path.basename(pathname, '.md') : title
   if (!nakedFilename) {
-    nakedFilename = 'Untitled'
+    nakedFilename = i18n.t('misc.untitled')
   }
 
   const defaultPath = path.join(dirname, `${nakedFilename}${extension}`)
@@ -110,7 +111,7 @@ const handleResponseForSave = async (e, { id, filename, markdown, pathname, opti
   const win = BrowserWindow.fromWebContents(e.sender)
   let recommendFilename = getRecommendTitleFromMarkdownString(markdown)
   if (!recommendFilename) {
-    recommendFilename = filename || 'Untitled'
+    recommendFilename = filename || i18n.t('misc.untitled')
   }
 
   // If the file doesn't exist on disk add it to the recently used documents later
@@ -241,7 +242,7 @@ ipcMain.on('mt::response-file-save-as', async (e, { id, filename, markdown, path
   const win = BrowserWindow.fromWebContents(e.sender)
   let recommendFilename = getRecommendTitleFromMarkdownString(markdown)
   if (!recommendFilename) {
-    recommendFilename = filename || 'Untitled'
+    recommendFilename = filename || i18n.t('misc.untitled')
   }
 
   // If the file doesn't exist on disk add it to the recently used documents later

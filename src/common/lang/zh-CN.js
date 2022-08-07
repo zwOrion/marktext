@@ -4,6 +4,27 @@ const zhCN = {
     zh: '中文',
     en: 'English'
   },
+  misc: {
+    untitled: '无标题',
+    openedFiles: '打开文件',
+    openFolder: '打开文件夹',
+    searchInFolder: '在文件夹中查找...',
+    noFolder: '没有文件夹打开',
+    case: '区分大小写',
+    wholeWord: '整词查找',
+    regEx: '使用正则表达式',
+    tabOfContent: '目录结构',
+    count: {
+      words: '词语:',
+      shortWords: '词',
+      characters: '字符:',
+      shortChar: '字',
+      paragraphs: '段落:',
+      shortParagraphs: '段',
+      all: '(包含空格) 字符:',
+      shortAll: '全'
+    }
+  },
   file: {
     root: '文件',
     newTab: '新建标签',
