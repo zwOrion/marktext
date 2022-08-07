@@ -1,16 +1,11 @@
 import fs from 'fs'
 import path from 'path'
-import { ipcMain, app } from 'electron'
+import { ipcMain } from 'electron'
 import log from 'electron-log'
-// import { hasSameKeys } from '../../main/utils'
 import { getPath } from '../../main/utils'
-import { isDirectory } from 'common/filesystem'
 import Store from 'electron-store'
 const PREFERENCES_FILE_NAME = 'preferences'
 
-// const getLanguage = function () {
-//   return preference.getSetting().language
-// }
 const store = new Store({ name: 'languageTmp' })
 const getLanauage = function () {
   let userSettingBase = {}
@@ -20,40 +15,30 @@ const getLanauage = function () {
 
   let basePath = ''
   if (!storeBase) {
-    log.info('基础路径', process.env.NODE_ENV)
+    log.info('路径未保存')
+
     if (process.env.NODE_ENV === 'development') {
       log.info('路径')
-      // app.setAppLogsPath('C:\\workspace\\zw\\marktext\\marktext\\logs')
-      log.info('开发环境', app.getPath('userData'))
-      // Don't pass electron development arguments to MarkText and change user data path.
+      log.info('开发环境', getPath('appData'))
       basePath = path.join(getPath('appData'), 'marktext-dev')
       log.info(basePath)
-    }
-    log.info('非基础路径')
-    // Check for portable mode and ensure the user data path is absolute. We assume
-    // that the path is writable if not this lead to an application crash.
-    if (!basePath) {
-      log.info('正式环境')
-      const portablePath = path.join(app.getAppPath(), '..', '..', 'marktext-user-data')
-      if (isDirectory(portablePath)) {
-        basePath = portablePath
-      }
     } else {
-      log.info('非正式环境')
-      basePath = path.resolve(basePath)
-      log.info(basePath)
+      log.info('生产环境')
+      basePath = path.join(getPath('appData'), 'marktext')
     }
+    if (!basePath) {
+      basePath = '/null'
+    }
+    log.info('设置路径', basePath)
     store.set('storeBase', basePath)
   } else {
     basePath = storeBase
   }
-
   let hasPreferencesFile = fs.existsSync(path.join(basePath, `./${PREFERENCES_FILE_NAME}.json`))
   let staticPath = path.join(__static, 'preference.json')
   let defaultSettings = null
   try {
     defaultSettings = JSON.parse(fs.readFileSync(staticPath, { encoding: 'utf8' }) || '{}')
-
     // Set best theme on first application start.
     // if (nativeTheme.shouldUseDarkColors) {
     //   defaultSettings.theme = 'dark'
