@@ -162,10 +162,10 @@ const handleResponseForSave = async (e, { id, filename, markdown, pathname, opti
 const showUnsavedFilesMessage = async (win, files) => {
   const { response } = await dialog.showMessageBox(win, {
     type: 'warning',
-    buttons: ['Save', 'Cancel', 'Don\'t save'],
+    buttons: [i18n.t('remind.saveButton'), i18n.t('remind.cancelButton'), i18n.t('remind.noSaveButton')],
     defaultId: 0,
-    message: `Do you want to save the changes you made to ${files.length} ${files.length === 1 ? 'file' : 'files'}?\n\n${files.map(f => f.filename).join('\n')}`,
-    detail: 'Your changes will be lost if you don\'t save them.',
+    message: `${i18n.t('remind.saveFileMessage')[0]} ${files.length} ${files.length === 1 ? `${i18n.t('remind.saveFileMessage')[0]}` : `${i18n.t('remind.saveFileMessage')[0]}`}?\n\n${files.map(f => f.filename).join('\n')}`,
+    detail: i18n.t('remind.saveDetail'),
     cancelId: 1,
     noLink: true
   })

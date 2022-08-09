@@ -4,7 +4,146 @@ const zhCN = {
     zh: '中文',
     en: 'English'
   },
+  export: {
+    options: '导出设置',
+    info: {
+      root: '信息',
+      text: '请自定义页面外观，点击“导出"继续".'
+    },
+    page: {
+      root: '页面',
+      htmlDesc: '页面标题:',
+      pdfSize: '页面大小:',
+      aspectRatio: '宽 / 高 (单位: mm):',
+      landscape: '横向:',
+      marginDesc: '页边距(单位：mm):',
+      TB: '上 / 下边距:',
+      LR: '左 / 右边距:',
+      pageSizeList: {
+        a3: 'A3 (297mm x 420mm)',
+        a4: 'A4 (210mm x 297mm)',
+        a5: 'A5 (148mm x 210mm)',
+        usLegal: 'US Legal (8.5" x 13")',
+        usLetter: 'US Letter (8.5" x 11")',
+        tabloid: 'Tabloid (17" x 11")',
+        custom: '自定义'
+      }
+    },
+    style: {
+      root: '样式',
+      theme: '覆盖主题字体设置:',
+      fontFamily: '字体:',
+      defaultFontFamily: 'Default',
+      fontSize: '字号',
+      lineHeight: '行高',
+      autoNumHeading: '标题自动编号:',
+      front: '显示前页:'
+    },
+    theme: {
+      root: '主题',
+      desc: '您可以通过选择一个主题或创建一个手工制作的主题来更改文档外观.',
+      select: '主题:',
+      exportThemeList: {
+        academic: 'Academic',
+        github: 'GitHub (默认)',
+        liber: 'Liber'
+      }
+    },
+    HF: {
+      root: '页眉 & 页脚',
+      desc: '如果定义了页眉、页脚，则文本将出现在所有页面上.',
+      head: {
+        type: '页眉类型:',
+        left: '左边页眉:',
+        main: '中间页眉:',
+        righ: '右边页眉:'
+      },
+      fotter: {
+        type: '页脚类型:',
+        left: '左边页脚:',
+        main: '中间页脚:',
+        right: '右边页脚:'
+      },
+      custom: {
+        root: '自定义样式:',
+        styleBool: '允许自定义样式对页眉和页脚生效:',
+        fontSize: '页眉和页脚的字体大小'
+      },
+      headerFooterTypes: {
+        none: '无',
+        single: '单栏',
+        three: '三栏'
+      },
+      headerFooterStyles: {
+        default: '默认',
+        simple: '简单',
+        style: '自定义样式'
+      }
+    },
+    table: {
+      root: '内容目录',
+      desc: '包含顶级目录:',
+      detaileDesc: '包含第一个标题等级.',
+      title: '标题:'
+    },
+    exportButton: '导出...'
+
+  },
+  remind: {
+    saveFileMessage: ['是否保存所做的更改到 ', '个文件', '个文件'],
+    saveDetail: '如果不保存更改，则可能会丢失更改.',
+    reloadFile: '文件已经被修改，是否重新加载?',
+    removedFile: '文件已经被删除.',
+    exportedSuccess: '导出成功！',
+    exportedSuccessMessage: ['导出文件 ', ' 成功!'],
+    savaButton: '保存',
+    cancelButton: '取消',
+    noSaveButton: '不保存'
+  },
+  sideBar: {
+    newFile: '新建文件',
+    newDir: '新建文件夹',
+    copy: '复制',
+    cut: '剪切',
+    paste: '粘贴',
+    rename: '重命名',
+    move2Trash: '移动到回收站',
+    showInFolder: '在文件夹中显示'
+  },
+  editor: {
+    cut: '剪切',
+    copy: '复制',
+    paste: '粘贴',
+    copyAsMarkdown: '复制为Markdown',
+    copyAsHtml: '复制为Html',
+    pastAsPlainText: '粘贴为纯文本',
+    insertParagraphBefore: '段前插入',
+    insertParagraphAfter: '段后插入'
+  },
+  tab: {
+    close: '关闭',
+    closeOtherTabs: '关闭其他',
+    closeSavedTabs: '关闭已保存',
+    closeAllTabs: '关闭所有',
+    renameFile: '重命名',
+    copyPath: '复制路径',
+    showInFolder: '在文件夹中显示'
+  },
+  frontMenu: {
+    duplicate: '向下复制',
+    turnInto: '转为..',
+    new: '创建新段',
+    delete: '删除'
+  },
   misc: {
+    image: {
+      edit: '编辑图片',
+      inline: '内联',
+      left: '左对齐',
+      center: '居中',
+      right: '右对齐',
+      delete: '删除'
+    },
     untitled: '无标题',
     openedFiles: '打开文件',
     openFolder: '打开文件夹',
@@ -14,6 +153,7 @@ const zhCN = {
     wholeWord: '整词查找',
     regEx: '使用正则表达式',
     tabOfContent: '目录结构',
+    newFile: '新建文件',
     count: {
       words: '词语:',
       shortWords: '词',
@@ -427,7 +567,6 @@ const zhCN = {
     closeTab: '关闭标签',
     closeWindow: '关闭窗口',
     quit: '退出'
-
   },
   edit: {
     root: '编辑',

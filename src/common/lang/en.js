@@ -4,7 +4,144 @@ const en = {
     zh: '中文',
     en: 'English'
   },
+  export: {
+    options: 'Export Options',
+    info: {
+      root: 'Info',
+      text: 'Please customize the page appearance and click on "export" to continue.'
+    },
+    page: {
+      root: 'Page',
+      htmlDesc: 'The page title:',
+      pdfSize: 'Page size:',
+      aspectRatio: 'Width/Height in mm:',
+      landscape: 'Landscape orientation:',
+      marginDesc: 'Page margin in mm:',
+      TB: 'Top/Bottom:',
+      LR: 'Left/Right:',
+      pageSizeList: {
+        a3: 'A3 (297mm x 420mm)',
+        a4: 'A4 (210mm x 297mm)',
+        a5: 'A5 (148mm x 210mm)',
+        usLegal: 'US Legal (8.5" x 13")',
+        usLetter: 'US Letter (8.5" x 11")',
+        tabloid: 'Tabloid (17" x 11")',
+        custom: 'Custom'
+      }
+    },
+    style: {
+      root: 'Style',
+      theme: 'Overwrite theme font settings:',
+      fontFamily: 'Font family:',
+      defaultFontFamily: 'Default',
+      fontSize: 'Font size',
+      lineHeight: 'Line height',
+      autoNumHeading: 'Auto numbering headings:',
+      front: 'Show front matter:'
+    },
+    theme: {
+      root: 'Theme',
+      desc: 'You can change the document appearance by choosing a theme or create a handcrafted one.',
+      select: 'Theme:',
+      exportThemeList: {
+        academic: 'Academic',
+        github: 'GitHub (Default)',
+        liber: 'Liber'
+      }
+    },
+    HF: {
+      root: 'Header & Footer',
+      desc: 'The text appear on all pages if header and/or footer is defined.',
+      head: {
+        type: 'Header type:',
+        left: 'The left header text:',
+        main: 'The main header text:',
+        righ: 'The right header text:'
+      },
+      fotter: {
+        type: 'Footer type:',
+        left: 'The left footer text:',
+        main: 'The main footer text:',
+        right: 'The right footer text:'
+      },
+      custom: {
+        root: 'Customize style:',
+        styleBool: 'Allow styled header and footer:',
+        fontSize: 'Header and footer font size'
+      },
+      headerFooterTypes: {
+        none: 'None',
+        single: 'Single cell',
+        three: 'Three cells'
+      },
+      headerFooterStyles: {
+        default: 'Default',
+        simple: 'Simple',
+        style: 'Styled'
+      }
+    },
+    table: {
+      root: 'Table of Contents',
+      desc: 'Include top heading:',
+      detaileDesc: 'Includes the first heading level too.',
+      title: 'Title:'
+    },
+    exportButton: 'Export...'
+
+  },
+  remind: {
+    saveFileMessage: ['Do you want to save the changes you made to ', 'file', 'files'],
+    saveDetail: 'Your changes will be lost if you don\'t save them.',
+    reloadFile: 'has been changed on disk. Do you want to reload it?',
+    removedFile: 'has been removed on disk.',
+    savaButton: 'Save',
+    cancelButton: 'Cancel',
+    noSaveButton: 'Don\'t save'
+  },
+  sideBar: {
+    newFile: 'New File',
+    newDir: 'New Directory',
+    copy: 'Copy',
+    cut: 'Cut',
+    paste: 'Paste',
+    rename: 'Rename',
+    move2Trash: 'Move To Trash',
+    showInFolder: 'Show In Folder'
+  },
+  editor: {
+    cut: 'Cut',
+    copy: 'Copy',
+    paste: 'Paste',
+    copyAsMarkdown: 'Copy As Markdown',
+    copyAsHtml: 'Copy As Html',
+    pastAsPlainText: 'Paste as Plain Text',
+    insertParagraphBefore: 'Insert Paragraph Before',
+    insertParagraphAfter: 'Insert Paragraph After'
+  },
+  tab: {
+    close: 'Close',
+    closeOtherTabs: 'Close others',
+    closeSavedTabs: 'Close saved tabs',
+    closeAllTabs: 'Close all tabs',
+    renameFile: 'Rename',
+    copyPath: 'Copy path',
+    showInFolder: 'Show in folder'
+  },
+  frontMenu: {
+    duplicate: 'Duplicate',
+    turnInto: 'Turn Into',
+    new: 'New Paragraph',
+    delete: 'Delete'
+  },
   misc: {
+    image: {
+      edit: 'Edit Image',
+      inline: 'Inline Image',
+      left: 'Align Left',
+      center: 'Align Middle',
+      right: 'Align Right',
+      delete: 'Remove Image'
+    },
     untitled: 'Untitled',
     openedFiles: 'Opened files',
     openFolder: 'Open Folder',
@@ -14,6 +151,7 @@ const en = {
     wholeWord: 'Select whole word',
     regEx: 'Use query as RegEx',
     tabOfContent: 'Table Of Contents',
+    newFile: 'New File',
     count: {
       words: 'Words:',
       shortWords: 'W',

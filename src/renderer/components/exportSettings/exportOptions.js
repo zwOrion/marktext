@@ -1,61 +1,63 @@
+import i18n from '../../../common/lang/index'
+
 export const pageSizeList = [
   {
-    label: 'A3 (297mm x 420mm)',
+    label: i18n.t('export.page.pageSizeList.a3'),
     value: 'A3'
   }, {
-    label: 'A4 (210mm x 297mm)',
+    label: i18n.t('export.page.pageSizeList.a4'),
     value: 'A4'
   }, {
-    label: 'A5 (148mm x 210mm)',
+    label: i18n.t('export.page.pageSizeList.a5'),
     value: 'A5'
   }, {
-    label: 'US Legal (8.5" x 13")',
+    label: i18n.t('export.page.pageSizeList.usLegal'),
     value: 'Legal'
   }, {
-    label: 'US Letter (8.5" x 11")',
+    label: i18n.t('export.page.pageSizeList.usLetter'),
     value: 'Letter'
   }, {
-    label: 'Tabloid (17" x 11")',
+    label: i18n.t('export.page.pageSizeList.tabloid'),
     value: 'Tabloid'
   }, {
-    label: 'Custom',
+    label: i18n.t('export.page.pageSizeList.custom'),
     value: 'custom'
   }
 ]
 
 export const headerFooterTypes = [
   {
-    label: 'None',
+    label: i18n.t('export.HF.headerFooterTypes.none'),
     value: 0
   }, {
-    label: 'Single cell',
+    label: i18n.t('export.HF.headerFooterTypes.single'),
     value: 1
   }, {
-    label: 'Three cells',
+    label: i18n.t('export.HF.headerFooterTypes.three'),
     value: 2
   }
 ]
 
 export const headerFooterStyles = [
   {
-    label: 'Default',
+    label: i18n.t('export.HF.headerFooterStyles.default'),
     value: 0
   }, {
-    label: 'Simple',
+    label: i18n.t('export.HF.headerFooterStyles.simple'),
     value: 1
   }, {
-    label: 'Styled',
+    label: i18n.t('export.HF.headerFooterStyles.style'),
     value: 2
   }
 ]
 
 export const exportThemeList = [{
-  label: 'Academic',
+  label: i18n.t('export.theme.exportThemeList.academic'),
   value: 'academic'
 }, {
-  label: 'GitHub (Default)',
+  label: i18n.t('export.theme.exportThemeList.github'),
   value: 'default'
 }, {
-  label: 'Liber',
+  label: i18n.t('export.theme.exportThemeList.liber'),
   value: 'liber'
 }]

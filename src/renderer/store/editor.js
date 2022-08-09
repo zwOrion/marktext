@@ -13,6 +13,7 @@ import {
   QuickOpenCommand,
   TrailingNewlineCommand
 } from '../commands'
+import i18n from 'common/lang'
 
 const autoSaveTimers = new Map()
 
@@ -1072,8 +1073,8 @@ const actions = {
   LINTEN_FOR_EXPORT_SUCCESS ({ commit }) {
     ipcRenderer.on('mt::export-success', (e, { type, filePath }) => {
       notice.notify({
-        title: 'Exported successfully',
-        message: `Exported "${path.basename(filePath)}" successfully!`,
+        title: i18n.t('remid.exportedSuccess'),
+        message: `${i18n.t('remid.exportedSuccessMessage[0]')} "${path.basename(filePath)}" ${i18n.t('remid.exportedSuccessMessage[1]')}`,
         showConfirm: true
       })
         .then(() => {
@@ -1142,7 +1143,7 @@ const actions = {
             commit('SET_SAVE_STATUS_BY_TAB', { tab, status: false })
             commit('PUSH_TAB_NOTIFICATION', {
               tabId: id,
-              msg: `"${filename}" has been removed on disk.`,
+              msg: `"${filename}" ${i18n.t('remind.removedFile')}`,
               style: 'warn',
               showConfirm: false,
               exclusiveType: 'file_changed'
@@ -1169,7 +1170,7 @@ const actions = {
             commit('SET_SAVE_STATUS_BY_TAB', { tab, status: false })
             commit('PUSH_TAB_NOTIFICATION', {
               tabId: id,
-              msg: `"${filename}" has been changed on disk. Do you want to reload it?`,
+              msg: `"${filename}" ${i18n.t('remid.reloadFile')}`,
               showConfirm: true,
               exclusiveType: 'file_changed',
               action: status => {

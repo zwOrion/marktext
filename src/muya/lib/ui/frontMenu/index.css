@@ -74,7 +74,9 @@
 }
 
 .ag-front-menu .submenu {
-  width: 190px;
+  /* width: 190px; */
+  /* fix: 本地化后文本内容边长后会换行 */
+  width: max-content;
   max-height: 300px;
   position: absolute;
   left: calc(100% + 3px);
