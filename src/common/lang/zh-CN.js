@@ -96,7 +96,7 @@ const zhCN = {
     removedFile: '文件已经被删除.',
     exportedSuccess: '导出成功！',
     exportedSuccessMessage: ['导出文件 ', ' 成功!'],
-    savaButton: '保存',
+    saveButton: '保存',
     cancelButton: '取消',
     noSaveButton: '不保存'
   },

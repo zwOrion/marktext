@@ -94,7 +94,7 @@ const en = {
     saveDetail: 'Your changes will be lost if you don\'t save them.',
     reloadFile: 'has been changed on disk. Do you want to reload it?',
     removedFile: 'has been removed on disk.',
-    savaButton: 'Save',
+    saveButton: 'Save',
     cancelButton: 'Cancel',
     noSaveButton: 'Don\'t save'
   },
