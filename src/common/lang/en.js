@@ -98,6 +98,17 @@ const en = {
     cancelButton: 'Cancel',
     noSaveButton: 'Don\'t save'
   },
+  img: {
+    embedImage: 'Embed Image',
+    embedImgModeDesc: ['Paste web image or local image path. Use ', 'simple mode', 'full mode'],
+    embedImgSelect: 'Select',
+    embedImgLink: 'Embed link',
+    chooseImgButton: 'Choose an Image',
+    chooseImgDesc: 'Choose image from your computer.',
+    imageTitle: 'Image title',
+    altText: 'Alt text',
+    imgSrc: 'Image link or local path'
+  },
   sideBar: {
     newFile: 'New File',
     newDir: 'New Directory',

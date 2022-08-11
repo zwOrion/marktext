@@ -100,6 +100,17 @@ const zhCN = {
     cancelButton: '取消',
     noSaveButton: '不保存'
   },
+  img: {
+    embedImage: '嵌入图片',
+    embedImgModeDesc: ['粘贴互联网或者本地图片路径. 使用 ', '简洁模式', '完整模式'],
+    embedImgSelect: '选择',
+    embedImgLink: '嵌入地址',
+    chooseImgButton: '选择一张图片',
+    chooseImgDesc: '在你本地计算机上选择图片.',
+    imageTitle: '图片标题',
+    altText: '可选文本',
+    imgSrc: '图片链接或者本地路径'
+  },
   sideBar: {
     newFile: '新建文件',
     newDir: '新建文件夹',
