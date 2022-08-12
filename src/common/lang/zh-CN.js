@@ -678,7 +678,8 @@ const zhCN = {
     reoprtOrRequest: '问题或需求',
     website: '网站',
     watchGitHub: '查看GitHub',
-    follow: '关注我们',
+    followGithub: '在GitHub上关注我们',
+    followTwitter: '在Twitter上关注我们',
     license: '许可证',
     update: '更新',
     about: '关于'

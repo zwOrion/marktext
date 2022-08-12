@@ -674,7 +674,8 @@ const en = {
     reoprtOrRequest: 'Report Issue or Request Feature...',
     website: 'Website...',
     watchGitHub: 'Watch on GitHub...',
-    follow: 'Follow us on Github...',
+    followGithub: 'Follow us on Github...',
+    followTwitter: 'Follow us on Twitter...',
     license: 'License...',
     update: 'Check for updates...',
     about: 'About MarkText...'

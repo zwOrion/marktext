@@ -72,17 +72,17 @@ export default function () {
         shell.openExternal('https://github.com/marktext/marktext')
       }
     }, {
-      label: i18n.t('help.feedback'),
+      label: i18n.t('help.watchGitHub'),
       click () {
         shell.openExternal('https://github.com/marktext/marktext')
       }
     }, {
-      label: i18n.t('help.watchGitHub'),
+      label: i18n.t('help.followGithub'),
       click () {
         shell.openExternal('https://github.com/Jocs')
       }
     }, {
-      label: i18n.t('help.follow'),
+      label: i18n.t('help.followTwitter'),
       click () {
         shell.openExternal('https://twitter.com/marktextapp')
       }
