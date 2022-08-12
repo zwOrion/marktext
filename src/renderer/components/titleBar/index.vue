@@ -46,13 +46,16 @@
         >
           <div slot="content">
             <div class="title-item">
-              <span class="front">Words:</span><span class="text">{{wordCount['word']}}</span>
+              <span class="front">{{ $t('misc.count.words') }}</span><span class="text">{{wordCount['word']}}</span>
             </div>
             <div class="title-item">
-              <span class="front">Characters:</span><span class="text">{{wordCount['character']}}</span>
+              <span class="front">{{ $t('misc.count.characters') }}</span><span class="text">{{wordCount['character']}}</span>
             </div>
             <div class="title-item">
-              <span class="front">Paragraphs:</span><span class="text">{{wordCount['paragraph']}}</span>
+              <span class="front">{{ $t('misc.count.paragraphs') }}</span><span class="text">{{wordCount['paragraph']}}</span>
+            </div>
+            <div class="title-item">
+              <span class="front">{{ $t('misc.count.all') }}</span><span class="text">{{wordCount['all']}}</span>
             </div>
           </div>
           <div
@@ -110,20 +113,20 @@ export default {
     this.isOsx = isOsx
     this.HASH = {
       word: {
-        short: 'W',
-        full: 'word'
+        short: this.$t('misc.count.shortWords'),
+        full: this.$t('misc.count.words')
       },
       character: {
-        short: 'C',
-        full: 'character'
+        short: this.$t('misc.count.shortChar'),
+        full: this.$t('misc.count.characters')
       },
       paragraph: {
-        short: 'P',
-        full: 'paragraph'
+        short: this.$t('misc.count.shortParagraphs'),
+        full: this.$t('misc.count.paragraphs')
       },
       all: {
-        short: 'A',
-        full: '(with space)character'
+        short: this.$t('misc.count.shortAll'),
+        full: this.$t('misc.count.all')
       }
     }
     this.windowIconMinimize = minimizePath

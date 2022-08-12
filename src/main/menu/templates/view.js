@@ -1,123 +1,96 @@
-import { ipcMain } from 'electron'
 import * as actions from '../actions/view'
+import i18n from '../../../common/lang/index'
 
 export default function (keybindings) {
   const viewMenu = {
-    label: '&View',
+    label: i18n.t('view.root'),
     submenu: [{
-      label: 'Command Palette...',
+      label: i18n.t('view.commandPalette'),
       accelerator: keybindings.getAccelerator('view.command-palette'),
-      click (menuItem, browserWindow) {
-        actions.showCommandPalette(browserWindow)
+      click (menuItem, focusedWindow) {
+        actions.showCommandPalette(focusedWindow)
       }
     }, {
       type: 'separator'
     }, {
       id: 'sourceCodeModeMenuItem',
-      label: 'Source Code Mode',
+      label: i18n.t('view.sourceCodeMode'),
       accelerator: keybindings.getAccelerator('view.source-code-mode'),
       type: 'checkbox',
       checked: false,
-      click (item, browserWindow, event) {
-        // if we call this function, the checked state is not set
-        if (!event) {
-          item.checked = !item.checked
-        }
-        actions.typeMode(browserWindow, 'sourceCode', item)
+      click (item, focusedWindow) {
+        actions.toggleSourceCodeMode(focusedWindow)
       }
     }, {
       id: 'typewriterModeMenuItem',
-      label: 'Typewriter Mode',
+      label: i18n.t('view.typewriterMode'),
       accelerator: keybindings.getAccelerator('view.typewriter-mode'),
       type: 'checkbox',
       checked: false,
-      click (item, browserWindow, event) {
-        // if we call this function, the checked state is not set
-        if (!event) {
-          item.checked = !item.checked
-        }
-        actions.typeMode(browserWindow, 'typewriter', item)
+      click (item, focusedWindow) {
+        actions.toggleTypewriterMode(focusedWindow)
       }
     }, {
       id: 'focusModeMenuItem',
-      label: 'Focus Mode',
+      label: i18n.t('view.focusMode'),
       accelerator: keybindings.getAccelerator('view.focus-mode'),
       type: 'checkbox',
       checked: false,
-      click (item, browserWindow, event) {
-        // if we call this function, the checked state is not set
-        if (!event) {
-          item.checked = !item.checked
-        }
-        actions.typeMode(browserWindow, 'focus', item)
+      click (item, focusedWindow) {
+        actions.toggleFocusMode(focusedWindow)
       }
     }, {
       type: 'separator'
     }, {
-      label: 'Show Sidebar',
+      label: i18n.t('view.showSidebar'),
       id: 'sideBarMenuItem',
       accelerator: keybindings.getAccelerator('view.toggle-sidebar'),
       type: 'checkbox',
       checked: false,
-      click (item, browserWindow, event) {
-        // if we call this function, the checked state is not set
-        if (!event) {
-          item.checked = !item.checked
-        }
-
-        actions.layout(item, browserWindow, 'showSideBar')
+      click (item, focusedWindow) {
+        actions.toggleSidebar(focusedWindow)
       }
     }, {
-      label: 'Show Tab Bar',
+      label: i18n.t('view.showTabBar'),
       id: 'tabBarMenuItem',
       accelerator: keybindings.getAccelerator('view.toggle-tabbar'),
       type: 'checkbox',
       checked: false,
-      click (item, browserWindow, event) {
-        // if we call this function, the checked state is not set
-        if (!event) {
-          item.checked = !item.checked
-        }
-
-        actions.layout(item, browserWindow, 'showTabBar')
+      click (item, focusedWindow) {
+        actions.toggleTabBar(focusedWindow)
       }
     }, {
-      label: 'Toggle Table of Contents',
+      label: i18n.t('view.toggleTableContents'),
       id: 'tocMenuItem',
       accelerator: keybindings.getAccelerator('view.toggle-toc'),
-      click (_, browserWindow) {
-        actions.layout(null, browserWindow, 'rightColumn', 'toc')
+      click (_, focusedWindow) {
+        actions.showTableOfContents(focusedWindow)
       }
     }, {
-      label: 'Reload Images',
+      label: i18n.t('view.reloadImages'),
       accelerator: keybindings.getAccelerator('view.reload-images'),
       click (item, focusedWindow) {
-        if (focusedWindow) {
-          focusedWindow.webContents.send('mt::invalidate-image-cache', {})
-        }
+        actions.reloadImageCache(focusedWindow)
       }
-    }, {
-      type: 'separator'
     }]
   }
 
   if (global.MARKTEXT_DEBUG) {
     viewMenu.submenu.push({
-      label: 'Show Developer Tools',
+      type: 'separator'
+    })
+    viewMenu.submenu.push({
+      label: i18n.t('view.developerTools'),
       accelerator: keybindings.getAccelerator('view.toggle-dev-tools'),
-      click (item, focusedWindow) {
-        if (focusedWindow) {
-          focusedWindow.webContents.toggleDevTools()
-        }
+      click (item, win) {
+        actions.debugToggleDevTools(win)
       }
     })
     viewMenu.submenu.push({
-      label: 'Reload window',
+      label: i18n.t('view.reloadWindow'),
       accelerator: keybindings.getAccelerator('view.dev-reload'),
       click (item, focusedWindow) {
-        if (focusedWindow) {
-          ipcMain.emit('window-reload-by-id', focusedWindow.id)
-        }
+        actions.debugReloadWindow(focusedWindow)
       }
     })
   }

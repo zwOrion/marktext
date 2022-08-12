@@ -1,28 +1,28 @@
 <template>
   <div class="pref-keybindings">
-    <h4>Key Bindings</h4>
+    <h4>{{ $t('file.preferences.keybindings.root') }}</h4>
     <section class="keybindings">
       <div class="text">
-        Customize MarkText shortcuts and click on the save button below to apply all changes (requires a restart).
-        All available and default key binding can be found <a class="link" @click="openKeybindingWiki">online</a>.
+        {{ $t('file.preferences.keybindings.bindingDesc[0]') }}
+        {{ $t('file.preferences.keybindings.bindingDesc[1]') }} <a class="link" @click="openKeybindingWiki">{{ $t('file.preferences.keybindings.bindingDesc[2]') }}</a>.
       </div>
       <el-table
         :data="keybindingList"
         style="width: 100%"
       >
-        <el-table-column prop="description" label="Description">
+        <el-table-column prop="description" :label="$t('file.preferences.keybindings.labelDesc')">
         </el-table-column>
-        <el-table-column prop="accelerator" label="Key Combination" width="220">
+        <el-table-column prop="accelerator" :label="$t('file.preferences.keybindings.labelKey')" width="220">
         </el-table-column>
-        <el-table-column fixed="right" label="Options" width="90">
+        <el-table-column fixed="right" :label="$t('file.preferences.keybindings.labelOptions')" width="90">
           <template slot-scope="scope">
-            <el-button @click="handleEditClick(scope.$index, scope.row)" type="text" size="small" title="Edit">
+            <el-button @click="handleEditClick(scope.$index, scope.row)" type="text" size="small" :title="$t('file.preferences.keybindings.editButton')">
               <i class="el-icon-edit"></i>
             </el-button>
-            <el-button @click="handleResetClick(scope.$index, scope.row)" type="text" size="small" title="Reset">
+            <el-button @click="handleResetClick(scope.$index, scope.row)" type="text" size="small" :title="$t('file.preferences.keybindings.resetButton')">
               <i class="el-icon-refresh-right"></i>
             </el-button>
-            <el-button @click="handleUnbindClick(scope.$index, scope.row)" type="text" size="small" title="Unbind">
+            <el-button @click="handleUnbindClick(scope.$index, scope.row)" type="text" size="small" :title="$t('file.preferences.keybindings.unbindButton')">
               <i class="el-icon-delete"></i>
             </el-button>
           </template>
@@ -31,13 +31,13 @@
     </section>
     <section class="footer">
       <separator></separator>
-      <el-button size="medium" @click="saveKeybindings">Save</el-button>
-      <el-button size="medium" @click="restoreDefaults">Restore default key bindings</el-button>
+      <el-button size="medium" @click="saveKeybindings">{{ $t('file.preferences.keybindings.saveButton') }}</el-button>
+      <el-button size="medium" @click="restoreDefaults">{{ $t('file.preferences.keybindings.restoreDefault') }}</el-button>
     </section>
     <section v-if="showDebugTools" class="keyboard-debug">
       <separator></separator>
-      <div><strong>Debug options:</strong></div>
-      <el-button size="medium" @click="dumpKeyboardInformation">Dump keyboard information</el-button>
+      <div><strong>{{ $t('file.preferences.keybindings.debugOptions') }}</strong></div>
+      <el-button size="medium" @click="dumpKeyboardInformation">{{ $t('file.preferences.keybindings.dumpKeyboardInfo') }}</el-button>
     </section>
     <key-input-dialog
       :showWithId="selectedShortcutId"

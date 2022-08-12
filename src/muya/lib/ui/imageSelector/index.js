@@ -4,6 +4,7 @@ import { patch, h } from '../../parser/render/snabbdom'
 import { EVENT_KEYS, URL_REG, isWin } from '../../config'
 import { getUniqueId, getImageInfo as getImageSrc } from '../../utils'
 import { getImageInfo } from '../../utils/getImageInfo'
+import i18n from '../../../../common/lang/index'
 
 import './index.css'
 
@@ -297,10 +298,10 @@ class ImageSelector extends BaseFloat {
 
   renderHeader () {
     const tabs = [{
-      label: 'Select',
+      label: i18n.t('img.embedImgSelect'),
       value: 'select'
     }, {
-      label: 'Embed link',
+      label: i18n.t('img.embedImgLink'),
       value: 'link'
     }]
 
@@ -337,13 +338,13 @@ class ImageSelector extends BaseFloat {
               this.handleSelectButtonClick()
             }
           }
-        }, 'Choose an Image'),
-        h('span.description', 'Choose image from your computer.')
+        }, i18n.t('img.chooseImgButton')),
+        h('span.description', i18n.t('img.chooseImgDesc'))
       ]
     } else if (tab === 'link') {
       const altInput = h('input.alt', {
         props: {
-          placeholder: 'Alt text',
+          placeholder: i18n.t('img.altText'),
           value: alt
         },
         on: {
@@ -360,7 +361,7 @@ class ImageSelector extends BaseFloat {
       })
       const srcInput = h('input.src', {
         props: {
-          placeholder: 'Image link or local path',
+          placeholder: i18n.t('img.imgSrc'),
           value: src
         },
         on: {
@@ -380,7 +381,7 @@ class ImageSelector extends BaseFloat {
       })
       const titleInput = h('input.title', {
         props: {
-          placeholder: 'Image title',
+          placeholder: i18n.t('img.imageTitle'),
           value: title
         },
         on: {
@@ -406,16 +407,16 @@ class ImageSelector extends BaseFloat {
             this.handleLinkButtonClick()
           }
         }
-      }, 'Embed Image')
+      }, i18n.t('img.embedImage'))
       const bottomDes = h('span.description', [
-        h('span', 'Paste web image or local image path. Use '),
+        h('span', i18n.t('img.embedImgModeDesc')[0]),
         h('a', {
           on: {
             click: event => {
               this.toggleMode()
             }
           }
-        }, `${isFullMode ? 'simple mode' : 'full mode'}.`)
+        }, `${isFullMode ? i18n.t('img.embedImgModeDesc')[1] : i18n.t('img.embedImgModeDesc')[2]}.`)
       ])
       bodyContent = [inputWrapper, embedButton, bottomDes]
     } else {

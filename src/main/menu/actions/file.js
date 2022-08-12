@@ -1,14 +1,18 @@
 import fs from 'fs-extra'
 import path from 'path'
-import { BrowserWindow, dialog, ipcMain, shell } from 'electron'
+import { BrowserWindow, app, dialog, ipcMain, shell } from 'electron'
 import log from 'electron-log'
 import { isDirectory, isFile, exists } from 'common/filesystem'
 import { MARKDOWN_EXTENSIONS, isMarkdownFile } from 'common/filesystem/paths'
+import { checkUpdates, userSetting } from './marktext'
+import { showTabBar } from './view'
+import { COMMANDS } from '../../commands'
 import { EXTENSION_HASN, PANDOC_EXTENSIONS, URL_REG } from '../../config'
 import { normalizeAndResolvePath, writeFile } from '../../filesystem'
 import { writeMarkdownFile } from '../../filesystem/markdown'
 import { getPath, getRecommendTitleFromMarkdownString } from '../../utils'
 import pandoc from '../../utils/pandoc'
+import i18n from '../../../common/lang/index'
 
 // TODO(refactor): "save" and "save as" should be moved to the editor window (editor.js) and
 // the renderer should communicate only with the editor window for file relevant stuff.
@@ -55,7 +59,7 @@ const handleResponseForExport = async (e, { type, content, pathname, title, page
   const dirname = pathname ? path.dirname(pathname) : getPath('documents')
   let nakedFilename = pathname ? path.basename(pathname, '.md') : title
   if (!nakedFilename) {
-    nakedFilename = 'Untitled'
+    nakedFilename = i18n.t('misc.untitled')
   }
 
   const defaultPath = path.join(dirname, `${nakedFilename}${extension}`)
@@ -107,7 +111,7 @@ const handleResponseForSave = async (e, { id, filename, markdown, pathname, opti
   const win = BrowserWindow.fromWebContents(e.sender)
   let recommendFilename = getRecommendTitleFromMarkdownString(markdown)
   if (!recommendFilename) {
-    recommendFilename = filename || 'Untitled'
+    recommendFilename = filename || i18n.t('misc.untitled')
   }
 
   // If the file doesn't exist on disk add it to the recently used documents later
@@ -158,10 +162,10 @@ const handleResponseForSave = async (e, { id, filename, markdown, pathname, opti
 const showUnsavedFilesMessage = async (win, files) => {
   const { response } = await dialog.showMessageBox(win, {
     type: 'warning',
-    buttons: ['Save', 'Cancel', 'Don\'t save'],
+    buttons: [i18n.t('remind.saveButton'), i18n.t('remind.cancelButton'), i18n.t('remind.noSaveButton')],
     defaultId: 0,
-    message: `Do you want to save the changes you made to ${files.length} ${files.length === 1 ? 'file' : 'files'}?\n\n${files.map(f => f.filename).join('\n')}`,
-    detail: 'Your changes will be lost if you don\'t save them.',
+    message: `${i18n.t('remind.saveFileMessage')[0]} ${files.length} ${files.length === 1 ? `${i18n.t('remind.saveFileMessage')[0]}` : `${i18n.t('remind.saveFileMessage')[0]}`}?\n\n${files.map(f => f.filename).join('\n')}`,
+    detail: i18n.t('remind.saveDetail'),
     cancelId: 1,
     noLink: true
   })
@@ -238,7 +242,7 @@ ipcMain.on('mt::response-file-save-as', async (e, { id, filename, markdown, path
   const win = BrowserWindow.fromWebContents(e.sender)
   let recommendFilename = getRecommendTitleFromMarkdownString(markdown)
   if (!recommendFilename) {
-    recommendFilename = filename || 'Untitled'
+    recommendFilename = filename || i18n.t('misc.untitled')
   }
 
   // If the file doesn't exist on disk add it to the recently used documents later
@@ -501,7 +505,7 @@ export const importFile = async win => {
   }
 }
 
-export const print = win => {
+export const printDocument = win => {
   if (win) {
     win.webContents.send('mt::show-export-dialog', 'print')
   }
@@ -545,6 +549,7 @@ export const openFileOrFolder = (win, pathname) => {
 export const newBlankTab = win => {
   if (win && win.webContents) {
     win.webContents.send('mt::new-untitled-tab')
+    showTabBar(win)
   }
 }
 
@@ -595,4 +600,25 @@ export const rename = win => {
 
 export const clearRecentlyUsed = () => {
   ipcMain.emit('menu-clear-recently-used')
+}
+
+// --- Commands -------------------------------------------------------------
+
+export const loadFileCommands = commandManager => {
+  commandManager.add(COMMANDS.FILE_CHECK_UPDATE, checkUpdates)
+  commandManager.add(COMMANDS.FILE_CLOSE_TAB, closeTab)
+  commandManager.add(COMMANDS.FILE_CLOSE_WINDOW, closeWindow)
+  commandManager.add(COMMANDS.FILE_EXPORT_FILE, exportFile)
+  commandManager.add(COMMANDS.FILE_IMPORT_FILE, importFile)
+  commandManager.add(COMMANDS.FILE_MOVE_FILE, moveTo)
+  commandManager.add(COMMANDS.FILE_NEW_FILE, newEditorWindow)
+  commandManager.add(COMMANDS.FILE_NEW_TAB, newBlankTab)
+  commandManager.add(COMMANDS.FILE_OPEN_FILE, openFile)
+  commandManager.add(COMMANDS.FILE_OPEN_FOLDER, openFolder)
+  commandManager.add(COMMANDS.FILE_PREFERENCES, userSetting)
+  commandManager.add(COMMANDS.FILE_PRINT, printDocument)
+  commandManager.add(COMMANDS.FILE_QUIT, app.quit)
+  commandManager.add(COMMANDS.FILE_RENAME_FILE, rename)
+  commandManager.add(COMMANDS.FILE_SAVE, save)
+  commandManager.add(COMMANDS.FILE_SAVE_AS, saveAs)
 }

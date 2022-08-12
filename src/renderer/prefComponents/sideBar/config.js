@@ -7,39 +7,40 @@ import SpellIcon from '@/assets/icons/pref_spellcheck.svg'
 import KeyBindingIcon from '@/assets/icons/pref_key_binding.svg'
 
 import preferences from '../../../main/preferences/schema'
+import i18n from '../../../common/lang/index'
 
 export const category = [{
-  name: 'General',
+  name: i18n.t('file.preferences.general.root'),
   label: 'general',
   icon: GeneralIcon,
   path: '/preference/general'
 }, {
-  name: 'Editor',
+  name: i18n.t('file.preferences.editor.root'),
   label: 'editor',
   icon: EditorIcon,
   path: '/preference/editor'
 }, {
-  name: 'Markdown',
+  name: i18n.t('file.preferences.markdown.root'),
   label: 'markdown',
   icon: MarkdownIcon,
   path: '/preference/markdown'
 }, {
-  name: 'Spelling',
+  name: i18n.t('file.preferences.spelling.root'),
   label: 'spelling',
   icon: SpellIcon,
   path: '/preference/spelling'
 }, {
-  name: 'Theme',
+  name: i18n.t('file.preferences.theme.root'),
   label: 'theme',
   icon: ThemeIcon,
   path: '/preference/theme'
 }, {
-  name: 'Image',
+  name: i18n.t('file.preferences.image.root'),
   label: 'image',
   icon: ImageIcon,
   path: '/preference/image'
 }, {
-  name: 'Key Bindings',
+  name: i18n.t('file.preferences.keybindings.root'),
   label: 'keybindings',
   icon: KeyBindingIcon,
   path: '/preference/keybindings'

@@ -10,7 +10,7 @@
         <svg class="icon icon-arrow" :class="{'fold': !showOpenedFiles}" aria-hidden="true" @click.stop="toggleOpenedFiles()">
           <use xlink:href="#icon-arrow"></use>
         </svg>
-        <span class="default-cursor text-overflow" @click.stop="toggleOpenedFiles()">Opened files</span>
+        <span class="default-cursor text-overflow" @click.stop="toggleOpenedFiles()">{{ $t('misc.openedFiles') }}</span>
         <a href="javascript:;" @click.stop="saveAll(false)" title="Save All">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-save-all"></use>
@@ -73,7 +73,7 @@
           <use :xlink:href="FolderIcon.url"></use>
         </svg>
         <button class="button-primary" @click="openFolder">
-          Open Folder
+          {{ $t('misc.openFolder') }}
         </button>
       </div>
     </div>
